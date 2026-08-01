@@ -10,7 +10,11 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+.env
 *.local
+
+# removee in cloude in finsh 
+.claude
 
 # Editor directories and files
 .vscode/*

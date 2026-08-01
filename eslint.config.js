@@ -19,4 +19,20 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    // useTheme ships next to the provider it belongs to; Fast Refresh handles a
+    // named export fine as long as it is declared here.
+    files: ["src/components/theme-provider.tsx"],
+    rules: {
+      'react-refresh/only-export-components': ['error', { allowExportNames: ['useTheme'] }],
+    },
+  },
+  {
+    files: ['src/components/ui/**', 'src/hooks/use-mobile.ts'],
+    rules: {
+      'react-refresh/only-export-components': 'off',
+      'react-hooks/purity': 'off',
+      'react-hooks/set-state-in-effect': 'off',
+    },
+  },
 ])

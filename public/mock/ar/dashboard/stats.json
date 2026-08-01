@@ -1,0 +1,6 @@
+[
+  { "id": "pageviews", "label": "مشاهدات الصفحات", "value": "50.8K", "change": 10.8 },
+  { "id": "monthly-users", "label": "المستخدمون شهريًا", "value": "23.6K", "change": 8.6 },
+  { "id": "new-signups", "label": "التسجيلات الجديدة", "value": "756", "change": -3.1 },
+  { "id": "subscriptions", "label": "الاشتراكات", "value": "2.3K", "change": 5.3 }
+]
