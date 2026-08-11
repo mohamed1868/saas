@@ -1,11 +1,12 @@
 import { Navigate, Outlet } from "react-router-dom"
 
+import { getSession } from "@/features/public/login/lib/session"
 import { PATHS } from "@/app/router/paths"
 
 export function ProtectedRoute() {
-  const token = localStorage.getItem("token")
+  const user = getSession()
 
-  if (!token) return <Navigate to={PATHS.login} replace />
+  if (!user) return <Navigate to={PATHS.login} replace />
 
   return <Outlet />
 }

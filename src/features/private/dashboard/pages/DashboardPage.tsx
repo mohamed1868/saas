@@ -2,9 +2,9 @@ import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 
 import { Button } from "@/components/ui/button"
-import { getStats } from "@/features/dashboard/api/stats"
-import { StatCard, StatCardSkeleton } from "@/features/dashboard/components/StatCard"
-import type { Stat } from "@/features/dashboard/types"
+import { getStats } from "@/features/private/dashboard/api/stats"
+import { StatCard, StatCardSkeleton } from "@/features/private/dashboard/components/StatCard"
+import type { Stat } from "@/features/private/dashboard/types/dashboard"
 
 export default function DashboardPage() {
   const { t } = useTranslation()

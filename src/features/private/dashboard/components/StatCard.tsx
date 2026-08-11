@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import type { Stat } from "@/features/dashboard/types"
+import type { Stat } from "@/features/private/dashboard/types/dashboard"
 
 export function StatCard({ stat }: { stat: Stat }) {
   return (

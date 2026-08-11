@@ -13,23 +13,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { SidebarMenuButton, useSidebar } from "@/components/ui/sidebar"
+import { clearSession, getSession } from "@/features/public/login/lib/session"
 import { PATHS } from "@/app/router/paths"
 
-type User = {
-  name: string
-  email: string
-  avatar?: string
-}
-
-function readUser(): User {
-  try {
-    const raw = localStorage.getItem("user")
-    if (raw) return JSON.parse(raw) as User
-  } catch {
-    localStorage.removeItem("user")
-  }
-  return { name: "—", email: "" }
-}
+const GUEST = { name: "—", email: "", avatar: undefined }
 
 function initialsOf(name: string) {
   const parts = name.trim().split(/\s+/).filter(Boolean)
@@ -42,11 +29,10 @@ export function NavUser() {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const { isMobile } = useSidebar()
-  const user = readUser()
+  const user = getSession() ?? GUEST
 
   function handleLogout() {
-    localStorage.removeItem("token")
-    localStorage.removeItem("user")
+    clearSession()
     navigate(PATHS.login, { replace: true })
   }
 

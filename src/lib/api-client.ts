@@ -1,5 +1,8 @@
 import axios from "axios"
 
+import { clearSession, getSession } from "@/features/public/login/lib/session"
+import { PATHS } from "@/app/router/paths"
+
 const USE_MOCKS = import.meta.env.VITE_USE_MOCKS === "true"
 
 export const api = axios.create({
@@ -8,8 +11,19 @@ export const api = axios.create({
   headers: { "Content-Type": "application/json" },
 })
 
+function endSession() {
+  clearSession()
+  if (window.location.pathname !== PATHS.login) window.location.replace(PATHS.login)
+}
+
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem("token")
+
+  if (token && !getSession()) {
+    endSession()
+    return Promise.reject(new axios.CanceledError("Invalid session"))
+  }
+
   if (token) config.headers.Authorization = `Bearer ${token}`
 
   const lang = localStorage.getItem("lang") ?? "en"
@@ -28,7 +42,7 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) localStorage.removeItem("token")
+    if (error.response?.status === 401) endSession()
     return Promise.reject(error)
   },
 )
