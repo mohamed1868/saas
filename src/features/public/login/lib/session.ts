@@ -1,8 +1,18 @@
 import { ACCOUNTS } from "@/features/public/login/data/accounts"
-import type { AuthUser } from "@/features/public/login/types/login"
+import type { AuthUser, Plan } from "@/features/public/login/types/login"
 
 const TOKEN_KEY = "token"
 const USER_KEY = "user"
+const DAY = 24 * 60 * 60 * 1000
+
+export function isPlanActive(plan: Plan) {
+  return new Date(`${plan.expiresAt}T23:59:59`).getTime() >= Date.now()
+}
+
+export function daysLeft(plan: Plan) {
+  const remaining = new Date(`${plan.expiresAt}T23:59:59`).getTime() - Date.now()
+  return Math.max(0, Math.ceil(remaining / DAY))
+}
 
 export function saveSession(token: string, user: AuthUser) {
   localStorage.setItem(TOKEN_KEY, token)
@@ -25,7 +35,7 @@ export function getSession(): AuthUser | null {
 
   const account = ACCOUNTS.find((a) => a.token === token)
 
-  if (!account) {
+  if (!account || !isPlanActive(account.user.plan)) {
     clearSession()
     return null
   }

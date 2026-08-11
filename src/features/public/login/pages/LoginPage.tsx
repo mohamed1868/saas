@@ -1,9 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { ArrowRight, CircleAlert, Eye, EyeOff, Loader2, Lock, User } from "lucide-react"
+import { ArrowRight, Building2, Check, CircleAlert, Eye, EyeOff, Loader2, Lock, User } from "lucide-react"
 import { useMemo, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { z } from "zod"
 
 import logoDark from "@/assets/logo/logoDark.webp"
@@ -24,8 +24,9 @@ import { Input } from "@/components/ui/input"
 import { siteConfig } from "@/config/site"
 import { signIn } from "@/features/public/login/api/login"
 import { LoginShowcase } from "@/features/public/login/components/LoginShowcase"
-import { DEMO_ACCOUNT } from "@/features/public/login/data/accounts"
+import { ACCOUNTS, type Account } from "@/features/public/login/data/accounts"
 import { saveSession } from "@/features/public/login/lib/session"
+import { cn } from "@/lib/utils"
 import { PATHS } from "@/app/router/paths"
 
 const USERNAME = /^[a-zA-Z0-9._-]+$/
@@ -48,21 +49,32 @@ function buildSchema(t: (key: string) => string) {
 
 type LoginValues = z.infer<ReturnType<typeof buildSchema>>
 
+const ERRORS = ["invalidCredentials", "planExpired"]
+
 export default function LoginPage() {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [error, setError] = useState<string | null>(null)
   const [revealed, setRevealed] = useState(false)
+  const [selected, setSelected] = useState(ACCOUNTS[0].username)
 
   const schema = useMemo(() => buildSchema(t), [t])
   const form = useForm<LoginValues>({
     resolver: zodResolver(schema),
     mode: "onChange",
-    defaultValues: { username: DEMO_ACCOUNT.username, password: DEMO_ACCOUNT.password },
+    defaultValues: { username: ACCOUNTS[0].username, password: ACCOUNTS[0].password },
   })
 
   const { isSubmitting, isValid } = form.formState
   const canSubmit = isValid && !isSubmitting
+
+  function selectAccount(account: Account) {
+    setSelected(account.username)
+    setError(null)
+    setRevealed(false)
+    form.setValue("username", account.username, { shouldValidate: true })
+    form.setValue("password", account.password, { shouldValidate: true })
+  }
 
   async function login(values: LoginValues) {
     setError(null)
@@ -72,11 +84,8 @@ export default function LoginPage() {
       saveSession(token, user)
       navigate(PATHS.dashboard, { replace: true })
     } catch (cause) {
-      setError(
-        cause instanceof Error && cause.message === "invalidCredentials"
-          ? "invalidCredentials"
-          : "signInFailed",
-      )
+      const key = cause instanceof Error ? cause.message : ""
+      setError(ERRORS.includes(key) ? key : "signInFailed")
     }
   }
 
@@ -107,6 +116,43 @@ export default function LoginPage() {
             </CardHeader>
 
             <CardContent className="space-y-5 p-6 pt-0 sm:p-8 sm:pt-0">
+              <div className="space-y-2">
+                <p className="text-sm font-medium">{t("chooseCompany")}</p>
+                <div className="grid gap-2 sm:grid-cols-2">
+                  {ACCOUNTS.map((account) => {
+                    const active = account.username === selected
+
+                    return (
+                      <button
+                        key={account.username}
+                        type="button"
+                        onClick={() => selectAccount(account)}
+                        className={cn(
+                          "rounded-xl border p-3 text-start transition-colors",
+                          active
+                            ? "border-primary bg-primary/10"
+                            : "border-border hover:bg-accent/50",
+                        )}
+                      >
+                        <span className="flex items-center gap-2">
+                          {active ? (
+                            <Check className="size-4 shrink-0 text-primary" />
+                          ) : (
+                            <Building2 className="size-4 shrink-0 text-muted-foreground" />
+                          )}
+                          <span className="truncate text-sm font-medium">
+                            {account.user.company.name}
+                          </span>
+                        </span>
+                        <span className="mt-1 block text-xs text-muted-foreground">
+                          {t(account.user.company.industryKey)}
+                        </span>
+                      </button>
+                    )
+                  })}
+                </div>
+              </div>
+
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(login)} className="space-y-4">
                   <FormField
@@ -197,6 +243,13 @@ export default function LoginPage() {
                   </Button>
                 </form>
               </Form>
+
+              <p className="text-center text-sm text-muted-foreground">
+                {t("noAccount")}{" "}
+                <Link to={PATHS.plans} className="font-medium text-primary hover:underline">
+                  {t("viewPlans")}
+                </Link>
+              </p>
             </CardContent>
           </Card>
 
