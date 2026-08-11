@@ -1,0 +1,6 @@
+[
+  { "id": "pageviews", "label": "Pageviews", "value": "50.8K", "change": 10.8 },
+  { "id": "monthly-users", "label": "Monthly users", "value": "23.6K", "change": 8.6 },
+  { "id": "new-signups", "label": "New sign ups", "value": "756", "change": -3.1 },
+  { "id": "subscriptions", "label": "Subscriptions", "value": "2.3K", "change": 5.3 }
+]

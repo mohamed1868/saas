@@ -1,0 +1,8 @@
+{
+  "token": "mock-token-fluxsync",
+  "user": {
+    "id": "u_001",
+    "name": "محمد سيد",
+    "email": "mohamed@fluxsync.com"
+  }
+}
