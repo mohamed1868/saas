@@ -1,0 +1,358 @@
+[
+  {
+    "id": "inv-aqua-001",
+    "number": "INV-2414",
+    "customerId": "caq-001",
+    "customerName": "زياد فاروق",
+    "issueDate": "10 أغسطس ٢٠٢٦",
+    "dueDate": "9 سبتمبر ٢٠٢٦",
+    "status": "draft",
+    "items": [
+      {
+        "productId": "aqa-001",
+        "name": "حوض سيراميك برو",
+        "price": 89,
+        "quantity": 2
+      },
+      {
+        "productId": "aqa-006",
+        "name": "دش مطري ٣٠ سم",
+        "price": 288.75,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 466.75,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 65.34,
+    "total": 532.09
+  },
+  {
+    "id": "inv-aqua-002",
+    "number": "INV-2413",
+    "customerId": "caq-004",
+    "customerName": "كلارا إبراهيم",
+    "issueDate": "2 أغسطس ٢٠٢٦",
+    "dueDate": "1 سبتمبر ٢٠٢٦",
+    "status": "sent",
+    "items": [
+      {
+        "productId": "aqa-009",
+        "name": "خلاط حوض مطبخ",
+        "price": 389,
+        "quantity": 1
+      },
+      {
+        "productId": "aqa-018",
+        "name": "كابينة دش ٩٠ سم",
+        "price": 738.75,
+        "quantity": 2
+      }
+    ],
+    "subtotal": 1866.5,
+    "discount": 50,
+    "taxRate": 14,
+    "tax": 254.31,
+    "total": 2070.81
+  },
+  {
+    "id": "inv-aqua-003",
+    "number": "INV-2412",
+    "customerId": "caq-007",
+    "customerName": "شريف جابر",
+    "issueDate": "21 يوليو ٢٠٢٦",
+    "dueDate": "20 أغسطس ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "aqa-011",
+        "name": "قاعدة دش ركنية",
+        "price": 488.5,
+        "quantity": 3
+      }
+    ],
+    "subtotal": 1465.5,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 205.17,
+    "total": 1670.67
+  },
+  {
+    "id": "inv-aqua-004",
+    "number": "INV-2411",
+    "customerId": "caq-010",
+    "customerName": "هنا مصطفى",
+    "issueDate": "28 يونيو ٢٠٢٦",
+    "dueDate": "28 يوليو ٢٠٢٦",
+    "status": "overdue",
+    "items": [
+      {
+        "productId": "aqa-013",
+        "name": "حوض مطبخ حوضين",
+        "price": 539,
+        "quantity": 1
+      },
+      {
+        "productId": "aqa-004",
+        "name": "خلاط مغسلة مقبض واحد",
+        "price": 238.25,
+        "quantity": 2
+      },
+      {
+        "productId": "aqa-002",
+        "name": "طقم دش حراري",
+        "price": 138.75,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 1154.25,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 161.59,
+    "total": 1315.84
+  },
+  {
+    "id": "inv-aqua-005",
+    "number": "INV-2410",
+    "customerId": "caq-002",
+    "customerName": "نورا كمال",
+    "issueDate": "15 يونيو ٢٠٢٦",
+    "dueDate": "15 يوليو ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "aqa-021",
+        "name": "طقم موزع صابون",
+        "price": 839,
+        "quantity": 2
+      }
+    ],
+    "subtotal": 1678,
+    "discount": 100,
+    "taxRate": 14,
+    "tax": 220.92,
+    "total": 1798.92
+  },
+  {
+    "id": "inv-aqua-006",
+    "number": "INV-2409",
+    "customerId": "caq-013",
+    "customerName": "يوسف نبيل",
+    "issueDate": "3 يونيو ٢٠٢٦",
+    "dueDate": "3 يوليو ٢٠٢٦",
+    "status": "sent",
+    "items": [
+      {
+        "productId": "aqa-007",
+        "name": "حوض فوق الرخامة",
+        "price": 338.5,
+        "quantity": 4
+      }
+    ],
+    "subtotal": 1354,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 189.56,
+    "total": 1543.56
+  },
+  {
+    "id": "inv-aqua-007",
+    "number": "INV-2408",
+    "customerId": "caq-005",
+    "customerName": "حسن يسري",
+    "issueDate": "22 مايو ٢٠٢٦",
+    "dueDate": "21 يونيو ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "aqa-024",
+        "name": "سيفون بلاستيك",
+        "price": 988.25,
+        "quantity": 1
+      },
+      {
+        "productId": "aqa-010",
+        "name": "حامل فوط مدفأ",
+        "price": 438.75,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 1427,
+    "discount": 0,
+    "taxRate": 0,
+    "tax": 0,
+    "total": 1427
+  },
+  {
+    "id": "inv-aqua-008",
+    "number": "INV-2407",
+    "customerId": "caq-016",
+    "customerName": "رنا سالم",
+    "issueDate": "9 مايو ٢٠٢٦",
+    "dueDate": "8 يونيو ٢٠٢٦",
+    "status": "overdue",
+    "items": [
+      {
+        "productId": "aqa-015",
+        "name": "صفاية أرضية ستانلس",
+        "price": 638.5,
+        "quantity": 2
+      },
+      {
+        "productId": "aqa-003",
+        "name": "قاعدة حمام معلقة",
+        "price": 188.5,
+        "quantity": 3
+      }
+    ],
+    "subtotal": 1842.5,
+    "discount": 75,
+    "taxRate": 14,
+    "tax": 247.45,
+    "total": 2014.95
+  },
+  {
+    "id": "inv-aqua-009",
+    "number": "INV-2406",
+    "customerId": "caq-008",
+    "customerName": "لينا سعد",
+    "issueDate": "27 أبريل ٢٠٢٦",
+    "dueDate": "27 مايو ٢٠٢٦",
+    "status": "cancelled",
+    "items": [
+      {
+        "productId": "aqa-019",
+        "name": "خلاط حائط كروم",
+        "price": 788.5,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 788.5,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 110.39,
+    "total": 898.89
+  },
+  {
+    "id": "inv-aqua-010",
+    "number": "INV-2405",
+    "customerId": "caq-020",
+    "customerName": "لورا بينيت",
+    "issueDate": "12 أبريل ٢٠٢٦",
+    "dueDate": "12 مايو ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "aqa-005",
+        "name": "بانيو قائم بذاته",
+        "price": 239,
+        "quantity": 5
+      }
+    ],
+    "subtotal": 1195,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 167.3,
+    "total": 1362.3
+  },
+  {
+    "id": "inv-aqua-011",
+    "number": "INV-2404",
+    "customerId": "caq-011",
+    "customerName": "كريم عادل",
+    "issueDate": "30 مارس ٢٠٢٦",
+    "dueDate": "29 أبريل ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "aqa-012",
+        "name": "طقم شطاف",
+        "price": 538.25,
+        "quantity": 2
+      },
+      {
+        "productId": "aqa-022",
+        "name": "حوض جرانيت حوض ونص",
+        "price": 888.75,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 1965.25,
+    "discount": 120,
+    "taxRate": 14,
+    "tax": 258.33,
+    "total": 2103.58
+  },
+  {
+    "id": "inv-aqua-012",
+    "number": "INV-2403",
+    "customerId": "caq-023",
+    "customerName": "جراهام هيلز",
+    "issueDate": "8 مارس ٢٠٢٦",
+    "dueDate": "7 أبريل ٢٠٢٦",
+    "status": "sent",
+    "items": [
+      {
+        "productId": "aqa-008",
+        "name": "صندوق طرد مخفي",
+        "price": 388.25,
+        "quantity": 3
+      }
+    ],
+    "subtotal": 1164.75,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 163.06,
+    "total": 1327.81
+  },
+  {
+    "id": "inv-aqua-013",
+    "number": "INV-2402",
+    "customerId": "caq-014",
+    "customerName": "إيميلي كلارك",
+    "issueDate": "17 فبراير ٢٠٢٦",
+    "dueDate": "19 مارس ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "aqa-017",
+        "name": "حوض بعمود",
+        "price": 689,
+        "quantity": 1
+      },
+      {
+        "productId": "aqa-020",
+        "name": "وحدة تخزين ٨٠ سم",
+        "price": 838.25,
+        "quantity": 2
+      }
+    ],
+    "subtotal": 2365.5,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 331.17,
+    "total": 2696.67
+  },
+  {
+    "id": "inv-aqua-014",
+    "number": "INV-2401",
+    "customerId": "caq-026",
+    "customerName": "جون كارتر",
+    "issueDate": "6 يناير ٢٠٢٦",
+    "dueDate": "5 فبراير ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "aqa-014",
+        "name": "دولاب مرآة حمام",
+        "price": 588.75,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 588.75,
+    "discount": 0,
+    "taxRate": 0,
+    "tax": 0,
+    "total": 588.75
+  }
+]

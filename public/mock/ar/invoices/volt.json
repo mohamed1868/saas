@@ -1,0 +1,358 @@
+[
+  {
+    "id": "inv-volt-001",
+    "number": "INV-2414",
+    "customerId": "cvl-001",
+    "customerName": "جون كارتر",
+    "issueDate": "10 أغسطس ٢٠٢٦",
+    "dueDate": "9 سبتمبر ٢٠٢٦",
+    "status": "draft",
+    "items": [
+      {
+        "productId": "vlt-001",
+        "name": "قلاية هوائية ذكية ٥ لتر",
+        "price": 129,
+        "quantity": 2
+      },
+      {
+        "productId": "vlt-006",
+        "name": "خلاط قوي ١٢٠٠ وات",
+        "price": 328.75,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 586.75,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 82.14,
+    "total": 668.89
+  },
+  {
+    "id": "inv-volt-002",
+    "number": "INV-2413",
+    "customerId": "cvl-004",
+    "customerName": "جراهام هيلز",
+    "issueDate": "2 أغسطس ٢٠٢٦",
+    "dueDate": "1 سبتمبر ٢٠٢٦",
+    "status": "sent",
+    "items": [
+      {
+        "productId": "vlt-009",
+        "name": "تلفزيون ذكي ٤K مقاس ٥٥",
+        "price": 429,
+        "quantity": 1
+      },
+      {
+        "productId": "vlt-018",
+        "name": "مكنسة روبوت برو",
+        "price": 778.75,
+        "quantity": 2
+      }
+    ],
+    "subtotal": 1986.5,
+    "discount": 50,
+    "taxRate": 14,
+    "tax": 271.11,
+    "total": 2207.61
+  },
+  {
+    "id": "inv-volt-003",
+    "number": "INV-2412",
+    "customerId": "cvl-007",
+    "customerName": "لورا بينيت",
+    "issueDate": "21 يوليو ٢٠٢٦",
+    "dueDate": "20 أغسطس ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "vlt-011",
+        "name": "غلاية كهربائية ١.٧ لتر",
+        "price": 528.5,
+        "quantity": 3
+      }
+    ],
+    "subtotal": 1585.5,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 221.97,
+    "total": 1807.47
+  },
+  {
+    "id": "inv-volt-004",
+    "number": "INV-2411",
+    "customerId": "cvl-010",
+    "customerName": "بيتر نوفاك",
+    "issueDate": "28 يونيو ٢٠٢٦",
+    "dueDate": "28 يوليو ٢٠٢٦",
+    "status": "overdue",
+    "items": [
+      {
+        "productId": "vlt-013",
+        "name": "ديب فريزر ٣٠٠ لتر",
+        "price": 579,
+        "quantity": 1
+      },
+      {
+        "productId": "vlt-004",
+        "name": "ثلاجة نوفروست ٤٥٠ لتر",
+        "price": 278.25,
+        "quantity": 2
+      },
+      {
+        "productId": "vlt-002",
+        "name": "تكييف إنفرتر ١.٥ حصان",
+        "price": 178.75,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 1314.25,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 184,
+    "total": 1498.25
+  },
+  {
+    "id": "inv-volt-005",
+    "number": "INV-2410",
+    "customerId": "cvl-002",
+    "customerName": "صوفي مور",
+    "issueDate": "15 يونيو ٢٠٢٦",
+    "dueDate": "15 يوليو ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "vlt-021",
+        "name": "ساوند بار ٢.١",
+        "price": 879,
+        "quantity": 2
+      }
+    ],
+    "subtotal": 1758,
+    "discount": 100,
+    "taxRate": 14,
+    "tax": 232.12,
+    "total": 1890.12
+  },
+  {
+    "id": "inv-volt-006",
+    "number": "INV-2409",
+    "customerId": "cvl-013",
+    "customerName": "إيميلي كلارك",
+    "issueDate": "3 يونيو ٢٠٢٦",
+    "dueDate": "3 يوليو ٢٠٢٦",
+    "status": "sent",
+    "items": [
+      {
+        "productId": "vlt-007",
+        "name": "سخان كهربائي ٥٠ لتر",
+        "price": 378.5,
+        "quantity": 4
+      }
+    ],
+    "subtotal": 1514,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 211.96,
+    "total": 1725.96
+  },
+  {
+    "id": "inv-volt-007",
+    "number": "INV-2408",
+    "customerId": "cvl-005",
+    "customerName": "ساندي هيوستن",
+    "issueDate": "22 مايو ٢٠٢٦",
+    "dueDate": "21 يونيو ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "vlt-024",
+        "name": "منقي هواء HEPA",
+        "price": 1028.25,
+        "quantity": 1
+      },
+      {
+        "productId": "vlt-010",
+        "name": "مكواة بخار ٢٤٠٠ وات",
+        "price": 478.75,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 1507,
+    "discount": 0,
+    "taxRate": 0,
+    "tax": 0,
+    "total": 1507
+  },
+  {
+    "id": "inv-volt-008",
+    "number": "INV-2407",
+    "customerId": "cvl-016",
+    "customerName": "كريم عادل",
+    "issueDate": "9 مايو ٢٠٢٦",
+    "dueDate": "8 يونيو ٢٠٢٦",
+    "status": "overdue",
+    "items": [
+      {
+        "productId": "vlt-015",
+        "name": "مضرب يدوي ٥٠٠ وات",
+        "price": 678.5,
+        "quantity": 2
+      },
+      {
+        "productId": "vlt-003",
+        "name": "غسالة أوتوماتيك ٨ كجم",
+        "price": 228.5,
+        "quantity": 3
+      }
+    ],
+    "subtotal": 2042.5,
+    "discount": 75,
+    "taxRate": 14,
+    "tax": 275.45,
+    "total": 2242.95
+  },
+  {
+    "id": "inv-volt-009",
+    "number": "INV-2406",
+    "customerId": "cvl-008",
+    "customerName": "عمر حسن",
+    "issueDate": "27 أبريل ٢٠٢٦",
+    "dueDate": "27 مايو ٢٠٢٦",
+    "status": "cancelled",
+    "items": [
+      {
+        "productId": "vlt-019",
+        "name": "سخان غاز ١٠ لتر",
+        "price": 828.5,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 828.5,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 115.99,
+    "total": 944.49
+  },
+  {
+    "id": "inv-volt-010",
+    "number": "INV-2405",
+    "customerId": "cvl-020",
+    "customerName": "شريف جابر",
+    "issueDate": "12 أبريل ٢٠٢٦",
+    "dueDate": "12 مايو ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "vlt-005",
+        "name": "ميكروويف ديجيتال ٣٠ لتر",
+        "price": 279,
+        "quantity": 5
+      }
+    ],
+    "subtotal": 1395,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 195.3,
+    "total": 1590.3
+  },
+  {
+    "id": "inv-volt-011",
+    "number": "INV-2404",
+    "customerId": "cvl-011",
+    "customerName": "رنا سالم",
+    "issueDate": "30 مارس ٢٠٢٦",
+    "dueDate": "29 أبريل ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "vlt-012",
+        "name": "مروحة عمود ١٨ بوصة",
+        "price": 578.25,
+        "quantity": 2
+      },
+      {
+        "productId": "vlt-022",
+        "name": "مروحة برجية ٤٥ وات",
+        "price": 928.75,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 2085.25,
+    "discount": 120,
+    "taxRate": 14,
+    "tax": 275.13,
+    "total": 2240.38
+  },
+  {
+    "id": "inv-volt-012",
+    "number": "INV-2403",
+    "customerId": "cvl-023",
+    "customerName": "كلارا إبراهيم",
+    "issueDate": "8 مارس ٢٠٢٦",
+    "dueDate": "7 أبريل ٢٠٢٦",
+    "status": "sent",
+    "items": [
+      {
+        "productId": "vlt-008",
+        "name": "مكنسة بدون كيس ٢٢٠٠ وات",
+        "price": 428.25,
+        "quantity": 3
+      }
+    ],
+    "subtotal": 1284.75,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 179.87,
+    "total": 1464.62
+  },
+  {
+    "id": "inv-volt-013",
+    "number": "INV-2402",
+    "customerId": "cvl-014",
+    "customerName": "يوسف نبيل",
+    "issueDate": "17 فبراير ٢٠٢٦",
+    "dueDate": "19 مارس ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "vlt-017",
+        "name": "غسالة فوق أوتوماتيك ١٢ كجم",
+        "price": 729,
+        "quantity": 1
+      },
+      {
+        "productId": "vlt-020",
+        "name": "محمصة خبز ٤ شرائح",
+        "price": 878.25,
+        "quantity": 2
+      }
+    ],
+    "subtotal": 2485.5,
+    "discount": 0,
+    "taxRate": 14,
+    "tax": 347.97,
+    "total": 2833.47
+  },
+  {
+    "id": "inv-volt-014",
+    "number": "INV-2401",
+    "customerId": "cvl-026",
+    "customerName": "زياد فاروق",
+    "issueDate": "6 يناير ٢٠٢٦",
+    "dueDate": "5 فبراير ٢٠٢٦",
+    "status": "paid",
+    "items": [
+      {
+        "productId": "vlt-014",
+        "name": "ماكينة قهوة ١.٢ لتر",
+        "price": 628.75,
+        "quantity": 1
+      }
+    ],
+    "subtotal": 628.75,
+    "discount": 0,
+    "taxRate": 0,
+    "tax": 0,
+    "total": 628.75
+  }
+]

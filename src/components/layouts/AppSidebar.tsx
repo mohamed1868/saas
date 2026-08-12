@@ -6,7 +6,6 @@ import {
   Settings,
   ShoppingCart,
   UsersRound,
-  Wallet,
 } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { NavLink, useLocation } from "react-router-dom"
@@ -36,8 +35,7 @@ const NAV = [
   { key: "products", icon: Package, to: PATHS.products },
   { key: "customers", icon: UsersRound, to: PATHS.customers },
   { key: "orders", icon: ShoppingCart, to: PATHS.orders },
-  { key: "invoices", icon: ReceiptText },
-  { key: "finance", icon: Wallet },
+  { key: "invoices", icon: ReceiptText, to: PATHS.invoices },
   { key: "support", icon: LifeBuoy, to: PATHS.support },
   { key: "settings", icon: Settings },
 ]

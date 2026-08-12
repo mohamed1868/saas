@@ -171,6 +171,29 @@ body {
   }
 }
 
+.print-sheet {
+  display: none;
+}
+
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  body > *:not(.print-sheet) {
+    display: none !important;
+  }
+
+  .print-sheet {
+    display: block;
+    background: #ffffff;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
