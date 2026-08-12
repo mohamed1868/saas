@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { SidebarMenuButton, useSidebar } from "@/components/ui/sidebar"
-import { clearSession, getSession } from "@/features/public/login/lib/session"
+import { clearSession, getSession } from "@/features/public/lib/session"
 import { initialsOf } from "@/lib/utils"
 import { PATHS } from "@/app/router/paths"
 

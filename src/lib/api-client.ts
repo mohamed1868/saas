@@ -1,6 +1,6 @@
 import axios from "axios"
 
-import { clearSession, getSession } from "@/features/public/login/lib/session"
+import { clearSession, getSession } from "@/features/public/lib/session"
 import { PATHS } from "@/app/router/paths"
 
 const USE_MOCKS = import.meta.env.VITE_USE_MOCKS === "true"

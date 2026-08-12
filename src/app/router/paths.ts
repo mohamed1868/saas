@@ -7,4 +7,5 @@ export const PATHS = {
   dashboard: "/dashboard",
   products: "/dashboard/products",
   customers: "/dashboard/customers",
+  orders: "/dashboard/orders",
 } as const

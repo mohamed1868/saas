@@ -11,6 +11,7 @@ import {
 } from "redux-persist"
 
 import customersReducer from "@/store/customersSlice"
+import ordersReducer from "@/store/ordersSlice"
 import productsReducer from "@/store/productsSlice"
 
 const storage = {
@@ -29,6 +30,7 @@ const persisted = (key: string) => ({
 const rootReducer = combineReducers({
   products: persistReducer(persisted("products"), productsReducer),
   customers: persistReducer(persisted("customers"), customersReducer),
+  orders: persistReducer(persisted("orders"), ordersReducer),
 })
 
 export const store = configureStore({

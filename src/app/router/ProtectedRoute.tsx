@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom"
 
-import { getSession } from "@/features/public/login/lib/session"
+import { getSession } from "@/features/public/lib/session"
 import { PATHS } from "@/app/router/paths"
 
 export function ProtectedRoute() {

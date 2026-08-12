@@ -9,6 +9,7 @@ import {
   DashboardPage,
   LoginPage,
   NotFoundPage,
+  OrdersPage,
   PlansPage,
   ProductsPage,
 } from "@/app/router/lazyRoutes"
@@ -37,6 +38,7 @@ export const router = createBrowserRouter([
               { path: PATHS.dashboard, element: <DashboardPage /> },
               { path: PATHS.products, element: <ProductsPage /> },
               { path: PATHS.customers, element: <CustomersPage /> },
+              { path: PATHS.orders, element: <OrdersPage /> },
             ],
           },
         ],

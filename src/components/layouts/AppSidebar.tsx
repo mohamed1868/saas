@@ -26,7 +26,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { daysLeft, getSession } from "@/features/public/login/lib/session"
+import { daysLeft, getSession } from "@/features/public/lib/session"
 import { LANGUAGES } from "@/lib/i18n"
 import { PATHS } from "@/app/router/paths"
 
@@ -34,7 +34,7 @@ const NAV = [
   { key: "dashboard", icon: LayoutDashboard, to: PATHS.dashboard },
   { key: "products", icon: Package, to: PATHS.products },
   { key: "customers", icon: UsersRound, to: PATHS.customers },
-  { key: "orders", icon: ShoppingCart },
+  { key: "orders", icon: ShoppingCart, to: PATHS.orders },
   { key: "invoices", icon: ReceiptText },
   { key: "finance", icon: Wallet },
   { key: "settings", icon: Settings },

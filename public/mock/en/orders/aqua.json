@@ -1,0 +1,524 @@
+[
+  {
+    "id": "ord-aqua-001",
+    "number": "#2400",
+    "customerId": "caq-001",
+    "customerName": "Ziad Farouk",
+    "date": "Jan 01, 2026",
+    "status": "delivered",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-001",
+        "name": "Ceramic Basin Pro",
+        "price": 89,
+        "quantity": 1
+      }
+    ],
+    "total": 89
+  },
+  {
+    "id": "ord-aqua-002",
+    "number": "#2399",
+    "customerId": "caq-004",
+    "customerName": "Clara Ibrahim",
+    "date": "Feb 04, 2026",
+    "status": "processing",
+    "payment": "unpaid",
+    "items": [
+      {
+        "productId": "aqa-006",
+        "name": "Rain Shower Head 30cm",
+        "price": 288.75,
+        "quantity": 2
+      },
+      {
+        "productId": "aqa-013",
+        "name": "Double Bowl Sink",
+        "price": 539,
+        "quantity": 3
+      }
+    ],
+    "total": 2194.5
+  },
+  {
+    "id": "ord-aqua-003",
+    "number": "#2398",
+    "customerId": "caq-007",
+    "customerName": "Sherif Gaber",
+    "date": "Mar 07, 2026",
+    "status": "pending",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-011",
+        "name": "Corner Shower Tray",
+        "price": 488.5,
+        "quantity": 3
+      },
+      {
+        "productId": "aqa-018",
+        "name": "Shower Enclosure 90cm",
+        "price": 738.75,
+        "quantity": 4
+      },
+      {
+        "productId": "aqa-001",
+        "name": "Ceramic Basin Pro",
+        "price": 89,
+        "quantity": 1
+      }
+    ],
+    "total": 4509.5
+  },
+  {
+    "id": "ord-aqua-004",
+    "number": "#2397",
+    "customerId": "caq-010",
+    "customerName": "Hana Mostafa",
+    "date": "Apr 10, 2026",
+    "status": "shipped",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-016",
+        "name": "Close Coupled Toilet",
+        "price": 688.25,
+        "quantity": 4
+      }
+    ],
+    "total": 2753
+  },
+  {
+    "id": "ord-aqua-005",
+    "number": "#2396",
+    "customerId": "caq-013",
+    "customerName": "Youssef Nabil",
+    "date": "May 13, 2026",
+    "status": "delivered",
+    "payment": "unpaid",
+    "items": [
+      {
+        "productId": "aqa-021",
+        "name": "Soap Dispenser Set",
+        "price": 839,
+        "quantity": 1
+      },
+      {
+        "productId": "aqa-004",
+        "name": "Single Lever Mixer",
+        "price": 238.25,
+        "quantity": 2
+      }
+    ],
+    "total": 1315.5
+  },
+  {
+    "id": "ord-aqua-006",
+    "number": "#2395",
+    "customerId": "caq-016",
+    "customerName": "Rana Salem",
+    "date": "Jun 16, 2026",
+    "status": "cancelled",
+    "payment": "refunded",
+    "items": [
+      {
+        "productId": "aqa-002",
+        "name": "Thermostatic Shower Set",
+        "price": 138.75,
+        "quantity": 2
+      },
+      {
+        "productId": "aqa-009",
+        "name": "Kitchen Sink Mixer",
+        "price": 389,
+        "quantity": 3
+      },
+      {
+        "productId": "aqa-016",
+        "name": "Close Coupled Toilet",
+        "price": 688.25,
+        "quantity": 4
+      }
+    ],
+    "total": 4197.5
+  },
+  {
+    "id": "ord-aqua-007",
+    "number": "#2394",
+    "customerId": "caq-019",
+    "customerName": "Omar Hassan",
+    "date": "Jul 19, 2026",
+    "status": "delivered",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-007",
+        "name": "Counter Top Basin",
+        "price": 338.5,
+        "quantity": 3
+      }
+    ],
+    "total": 1015.5
+  },
+  {
+    "id": "ord-aqua-008",
+    "number": "#2393",
+    "customerId": "caq-022",
+    "customerName": "Sandy Houston",
+    "date": "Aug 22, 2026",
+    "status": "returned",
+    "payment": "refunded",
+    "items": [
+      {
+        "productId": "aqa-012",
+        "name": "Bidet Spray Set",
+        "price": 538.25,
+        "quantity": 4
+      },
+      {
+        "productId": "aqa-019",
+        "name": "Wall Mixer Chrome",
+        "price": 788.5,
+        "quantity": 1
+      }
+    ],
+    "total": 2941.5
+  },
+  {
+    "id": "ord-aqua-009",
+    "number": "#2392",
+    "customerId": "caq-025",
+    "customerName": "Sophie Moore",
+    "date": "Jan 25, 2026",
+    "status": "delivered",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-017",
+        "name": "Pedestal Basin",
+        "price": 689,
+        "quantity": 1
+      },
+      {
+        "productId": "aqa-024",
+        "name": "Siphon Trap PVC",
+        "price": 988.25,
+        "quantity": 2
+      },
+      {
+        "productId": "aqa-007",
+        "name": "Counter Top Basin",
+        "price": 338.5,
+        "quantity": 3
+      }
+    ],
+    "total": 3681
+  },
+  {
+    "id": "ord-aqua-010",
+    "number": "#2391",
+    "customerId": "caq-002",
+    "customerName": "Nora Kamal",
+    "date": "Feb 01, 2026",
+    "status": "processing",
+    "payment": "unpaid",
+    "items": [
+      {
+        "productId": "aqa-022",
+        "name": "Granite Sink 1.5 Bowl",
+        "price": 888.75,
+        "quantity": 2
+      }
+    ],
+    "total": 1777.5
+  },
+  {
+    "id": "ord-aqua-011",
+    "number": "#2390",
+    "customerId": "caq-005",
+    "customerName": "Hassan Yousri",
+    "date": "Mar 04, 2026",
+    "status": "pending",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-003",
+        "name": "Wall-Hung Toilet",
+        "price": 188.5,
+        "quantity": 3
+      },
+      {
+        "productId": "aqa-010",
+        "name": "Heated Towel Rail",
+        "price": 438.75,
+        "quantity": 4
+      }
+    ],
+    "total": 2320.5
+  },
+  {
+    "id": "ord-aqua-012",
+    "number": "#2389",
+    "customerId": "caq-008",
+    "customerName": "Lina Saad",
+    "date": "Apr 07, 2026",
+    "status": "shipped",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-008",
+        "name": "Concealed Cistern",
+        "price": 388.25,
+        "quantity": 4
+      },
+      {
+        "productId": "aqa-015",
+        "name": "Floor Drain Stainless",
+        "price": 638.5,
+        "quantity": 1
+      },
+      {
+        "productId": "aqa-022",
+        "name": "Granite Sink 1.5 Bowl",
+        "price": 888.75,
+        "quantity": 2
+      }
+    ],
+    "total": 3969
+  },
+  {
+    "id": "ord-aqua-013",
+    "number": "#2388",
+    "customerId": "caq-011",
+    "customerName": "Karim Adel",
+    "date": "May 10, 2026",
+    "status": "delivered",
+    "payment": "unpaid",
+    "items": [
+      {
+        "productId": "aqa-013",
+        "name": "Double Bowl Sink",
+        "price": 539,
+        "quantity": 1
+      }
+    ],
+    "total": 539
+  },
+  {
+    "id": "ord-aqua-014",
+    "number": "#2387",
+    "customerId": "caq-014",
+    "customerName": "Emily Clark",
+    "date": "Jun 13, 2026",
+    "status": "cancelled",
+    "payment": "refunded",
+    "items": [
+      {
+        "productId": "aqa-018",
+        "name": "Shower Enclosure 90cm",
+        "price": 738.75,
+        "quantity": 2
+      },
+      {
+        "productId": "aqa-001",
+        "name": "Ceramic Basin Pro",
+        "price": 89,
+        "quantity": 3
+      }
+    ],
+    "total": 1744.5
+  },
+  {
+    "id": "ord-aqua-015",
+    "number": "#2386",
+    "customerId": "caq-017",
+    "customerName": "Peter Novak",
+    "date": "Jul 16, 2026",
+    "status": "delivered",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-023",
+        "name": "Angle Valve Brass",
+        "price": 938.5,
+        "quantity": 3
+      },
+      {
+        "productId": "aqa-006",
+        "name": "Rain Shower Head 30cm",
+        "price": 288.75,
+        "quantity": 4
+      },
+      {
+        "productId": "aqa-013",
+        "name": "Double Bowl Sink",
+        "price": 539,
+        "quantity": 1
+      }
+    ],
+    "total": 4509.5
+  },
+  {
+    "id": "ord-aqua-016",
+    "number": "#2385",
+    "customerId": "caq-020",
+    "customerName": "Laura Bennett",
+    "date": "Aug 19, 2026",
+    "status": "returned",
+    "payment": "refunded",
+    "items": [
+      {
+        "productId": "aqa-004",
+        "name": "Single Lever Mixer",
+        "price": 238.25,
+        "quantity": 4
+      }
+    ],
+    "total": 953
+  },
+  {
+    "id": "ord-aqua-017",
+    "number": "#2384",
+    "customerId": "caq-023",
+    "customerName": "Graham Hills",
+    "date": "Jan 22, 2026",
+    "status": "delivered",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-009",
+        "name": "Kitchen Sink Mixer",
+        "price": 389,
+        "quantity": 1
+      },
+      {
+        "productId": "aqa-016",
+        "name": "Close Coupled Toilet",
+        "price": 688.25,
+        "quantity": 2
+      }
+    ],
+    "total": 1765.5
+  },
+  {
+    "id": "ord-aqua-018",
+    "number": "#2383",
+    "customerId": "caq-026",
+    "customerName": "John Carter",
+    "date": "Feb 25, 2026",
+    "status": "processing",
+    "payment": "unpaid",
+    "items": [
+      {
+        "productId": "aqa-014",
+        "name": "Bathroom Mirror Cabinet",
+        "price": 588.75,
+        "quantity": 2
+      },
+      {
+        "productId": "aqa-021",
+        "name": "Soap Dispenser Set",
+        "price": 839,
+        "quantity": 3
+      },
+      {
+        "productId": "aqa-004",
+        "name": "Single Lever Mixer",
+        "price": 238.25,
+        "quantity": 4
+      }
+    ],
+    "total": 4647.5
+  },
+  {
+    "id": "ord-aqua-019",
+    "number": "#2382",
+    "customerId": "caq-003",
+    "customerName": "Bassem Ali",
+    "date": "Mar 01, 2026",
+    "status": "pending",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-019",
+        "name": "Wall Mixer Chrome",
+        "price": 788.5,
+        "quantity": 3
+      }
+    ],
+    "total": 2365.5
+  },
+  {
+    "id": "ord-aqua-020",
+    "number": "#2381",
+    "customerId": "caq-006",
+    "customerName": "Maya Fouad",
+    "date": "Apr 04, 2026",
+    "status": "shipped",
+    "payment": "paid",
+    "items": [
+      {
+        "productId": "aqa-024",
+        "name": "Siphon Trap PVC",
+        "price": 988.25,
+        "quantity": 4
+      },
+      {
+        "productId": "aqa-007",
+        "name": "Counter Top Basin",
+        "price": 338.5,
+        "quantity": 1
+      }
+    ],
+    "total": 4291.5
+  },
+  {
+    "id": "ord-aqua-021",
+    "number": "#2380",
+    "customerId": "caq-009",
+    "customerName": "Adam Wright",
+    "date": "May 07, 2026",
+    "status": "delivered",
+    "payment": "unpaid",
+    "items": [
+      {
+        "productId": "aqa-005",
+        "name": "Freestanding Bathtub",
+        "price": 239,
+        "quantity": 1
+      },
+      {
+        "productId": "aqa-012",
+        "name": "Bidet Spray Set",
+        "price": 538.25,
+        "quantity": 2
+      },
+      {
+        "productId": "aqa-019",
+        "name": "Wall Mixer Chrome",
+        "price": 788.5,
+        "quantity": 3
+      }
+    ],
+    "total": 3681
+  },
+  {
+    "id": "ord-aqua-022",
+    "number": "#2379",
+    "customerId": "caq-012",
+    "customerName": "Dina Rashad",
+    "date": "Jun 10, 2026",
+    "status": "cancelled",
+    "payment": "refunded",
+    "items": [
+      {
+        "productId": "aqa-010",
+        "name": "Heated Towel Rail",
+        "price": 438.75,
+        "quantity": 2
+      }
+    ],
+    "total": 877.5
+  }
+]
