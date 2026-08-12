@@ -9,19 +9,26 @@ import {
   persistReducer,
   persistStore,
 } from "redux-persist"
-import storage from "redux-persist/es/storage"
 
+import customersReducer from "@/store/customersSlice"
 import productsReducer from "@/store/productsSlice"
 
-const productsPersistConfig = {
-  key: "products",
-  version: 1,
-  storage,
-  whitelist: ["byCompany"],
+const storage = {
+  getItem: (key: string) => Promise.resolve(localStorage.getItem(key)),
+  setItem: (key: string, value: string) => Promise.resolve(localStorage.setItem(key, value)),
+  removeItem: (key: string) => Promise.resolve(localStorage.removeItem(key)),
 }
 
+const persisted = (key: string) => ({
+  key,
+  version: 2,
+  storage,
+  whitelist: ["byScope"],
+})
+
 const rootReducer = combineReducers({
-  products: persistReducer(productsPersistConfig, productsReducer),
+  products: persistReducer(persisted("products"), productsReducer),
+  customers: persistReducer(persisted("customers"), customersReducer),
 })
 
 export const store = configureStore({

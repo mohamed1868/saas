@@ -1,4 +1,4 @@
-import { PackageSearch, Plus } from "lucide-react"
+import { Plus, UsersRound } from "lucide-react"
 import { useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 
@@ -7,83 +7,87 @@ import { TablePagination } from "@/components/shared/TablePagination"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
-import { ProductFormDialog } from "@/features/private/products/components/ProductFormDialog"
-import { ProductsTable } from "@/features/private/products/components/ProductsTable"
-import { ProductsToolbar } from "@/features/private/products/components/ProductsToolbar"
-import type { Product, ProductDraft } from "@/features/private/products/types/products"
+import { CustomerFormDialog } from "@/features/private/customers/components/CustomerFormDialog"
+import { CustomersTable } from "@/features/private/customers/components/CustomersTable"
+import { CustomersToolbar } from "@/features/private/customers/components/CustomersToolbar"
+import type { Customer, CustomerDraft } from "@/features/private/customers/types/customers"
 import { getSession } from "@/features/public/login/lib/session"
 import { useLookups } from "@/hooks/useLookups"
 import { usePagedList } from "@/hooks/usePagedList"
 import { dataScope, mergeOptions } from "@/lib/utils"
+import { customers as customersSlice } from "@/store/customersSlice"
 import { useAppDispatch, useAppSelector } from "@/store/hooks"
-import { products as productsSlice } from "@/store/productsSlice"
 
 const PAGE_SIZE = 8
 
-export default function ProductsPage() {
+export default function CustomersPage() {
   const { t, i18n } = useTranslation()
   const dispatch = useAppDispatch()
 
   const companyId = getSession()?.company.id ?? ""
   const scope = dataScope(companyId, i18n.language)
-  const scopedProducts = useAppSelector((state) => state.products.byScope[scope])
-  const status = useAppSelector((state) => state.products.statusByScope[scope] ?? "idle")
+  const scopedCustomers = useAppSelector((state) => state.customers.byScope[scope])
+  const status = useAppSelector((state) => state.customers.statusByScope[scope] ?? "idle")
   const lookups = useLookups(companyId)
 
   const [search, setSearch] = useState("")
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
+  const [selectedCities, setSelectedCities] = useState<string[]>([])
+  const [selectedTypes, setSelectedTypes] = useState<string[]>([])
   const [selectedStatuses, setSelectedStatuses] = useState<string[]>([])
 
-  const [editing, setEditing] = useState<Product | null>(null)
+  const [editing, setEditing] = useState<Customer | null>(null)
   const [creating, setCreating] = useState(false)
-  const [deleting, setDeleting] = useState<Product | null>(null)
+  const [deleting, setDeleting] = useState<Customer | null>(null)
 
   useEffect(() => {
-    if (companyId && !scopedProducts && status !== "loading" && status !== "failed") {
-      dispatch(productsSlice.fetch(scope))
+    if (companyId && !scopedCustomers && status !== "loading" && status !== "failed") {
+      dispatch(customersSlice.fetch(scope))
     }
-  }, [scope, companyId, scopedProducts, status, dispatch])
+  }, [scope, companyId, scopedCustomers, status, dispatch])
 
-  const products = useMemo(() => scopedProducts ?? [], [scopedProducts])
-  const categories = useMemo(
-    () => mergeOptions(lookups.categories, products.map((product) => product.category)),
-    [lookups, products],
+  const customers = useMemo(() => scopedCustomers ?? [], [scopedCustomers])
+  const cities = useMemo(
+    () => mergeOptions(lookups.cities, customers.map((customer) => customer.city)),
+    [lookups, customers],
   )
 
   const filtered = useMemo(() => {
     const term = search.trim().toLowerCase()
 
-    return products.filter((product) => {
-      if (selectedCategories.length > 0 && !selectedCategories.includes(product.category))
-        return false
-      if (selectedStatuses.length > 0 && !selectedStatuses.includes(product.status)) return false
+    return customers.filter((customer) => {
+      if (selectedCities.length > 0 && !selectedCities.includes(customer.city)) return false
+      if (selectedTypes.length > 0 && !selectedTypes.includes(customer.type)) return false
+      if (selectedStatuses.length > 0 && !selectedStatuses.includes(customer.status)) return false
       if (!term) return true
 
       return (
-        product.name.toLowerCase().includes(term) || product.sku.toLowerCase().includes(term)
+        customer.name.toLowerCase().includes(term) ||
+        customer.email.toLowerCase().includes(term) ||
+        customer.phone.includes(term)
       )
     })
-  }, [products, search, selectedCategories, selectedStatuses])
+  }, [customers, search, selectedCities, selectedTypes, selectedStatuses])
 
   const paged = usePagedList(filtered, PAGE_SIZE)
 
-  const loading = !scopedProducts && status === "loading"
-  const failed = !scopedProducts && status === "failed"
+  const loading = !scopedCustomers && status === "loading"
+  const failed = !scopedCustomers && status === "failed"
 
   function clearFilters() {
     setSearch("")
-    setSelectedCategories([])
+    setSelectedCities([])
+    setSelectedTypes([])
     setSelectedStatuses([])
     paged.resetPage()
   }
 
-  function saveProduct(draft: ProductDraft, id?: string) {
+  function saveCustomer(draft: CustomerDraft, id?: string) {
     if (id) {
-      dispatch(productsSlice.updated({ scope, id, changes: draft }))
+      dispatch(customersSlice.updated({ scope, id, changes: draft }))
       return
     }
 
-    dispatch(productsSlice.added({ scope, record: { ...draft, id: crypto.randomUUID() } }))
+    dispatch(customersSlice.added({ scope, record: { ...draft, id: crypto.randomUUID() } }))
     paged.resetPage()
   }
 
@@ -91,9 +95,9 @@ export default function ProductsPage() {
     <div className="space-y-5">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-semibold tracking-tight">{t("products")}</h1>
+          <h1 className="text-2xl font-semibold tracking-tight">{t("customers")}</h1>
           <p className="text-sm text-muted-foreground">
-            {t("productsSubtitle", { count: products.length })}
+            {t("customersSubtitle", { count: customers.length })}
           </p>
         </div>
 
@@ -102,21 +106,26 @@ export default function ProductsPage() {
           className="bg-linear-to-r from-primary to-chart-3 text-white hover:brightness-110"
         >
           <Plus className="size-4" />
-          {t("addProduct")}
+          {t("addCustomer")}
         </Button>
       </div>
 
-      <ProductsToolbar
+      <CustomersToolbar
         search={search}
-        categories={categories}
-        selectedCategories={selectedCategories}
+        cities={cities}
+        selectedCities={selectedCities}
+        selectedTypes={selectedTypes}
         selectedStatuses={selectedStatuses}
         onSearchChange={(value) => {
           setSearch(value)
           paged.resetPage()
         }}
-        onCategoriesChange={(values) => {
-          setSelectedCategories(values)
+        onCitiesChange={(values) => {
+          setSelectedCities(values)
+          paged.resetPage()
+        }}
+        onTypesChange={(values) => {
+          setSelectedTypes(values)
           paged.resetPage()
         }}
         onStatusesChange={(values) => {
@@ -135,11 +144,11 @@ export default function ProductsPage() {
           </div>
         ) : failed ? (
           <div className="flex flex-col items-center gap-3 p-10">
-            <p className="text-sm text-destructive">{t("productsLoadFailed")}</p>
+            <p className="text-sm text-destructive">{t("customersLoadFailed")}</p>
             <Button
               variant="outline"
               size="sm"
-              onClick={() => dispatch(productsSlice.fetch(scope))}
+              onClick={() => dispatch(customersSlice.fetch(scope))}
             >
               {t("retry")}
             </Button>
@@ -147,9 +156,9 @@ export default function ProductsPage() {
         ) : filtered.length === 0 ? (
           <div className="flex flex-col items-center gap-3 p-12 text-center">
             <span className="flex size-12 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
-              <PackageSearch className="size-6" />
+              <UsersRound className="size-6" />
             </span>
-            <p className="text-sm text-muted-foreground">{t("noProducts")}</p>
+            <p className="text-sm text-muted-foreground">{t("noCustomers")}</p>
             <Button variant="outline" size="sm" onClick={clearFilters}>
               {t("clearFilters")}
             </Button>
@@ -157,7 +166,7 @@ export default function ProductsPage() {
         ) : (
           <>
             <div className="overflow-x-auto">
-              <ProductsTable products={paged.visible} onEdit={setEditing} onDelete={setDeleting} />
+              <CustomersTable customers={paged.visible} onEdit={setEditing} onDelete={setDeleting} />
             </div>
 
             <TablePagination
@@ -173,10 +182,10 @@ export default function ProductsPage() {
       </Card>
 
       {(creating || editing) && (
-        <ProductFormDialog
-          product={editing}
-          categories={categories}
-          onSave={saveProduct}
+        <CustomerFormDialog
+          customer={editing}
+          cities={cities}
+          onSave={saveCustomer}
           onClose={() => {
             setCreating(false)
             setEditing(null)
@@ -186,11 +195,11 @@ export default function ProductsPage() {
 
       {deleting && (
         <ConfirmDialog
-          title={t("deleteProduct")}
-          description={t("deleteProductBody", { name: deleting.name })}
+          title={t("deleteCustomer")}
+          description={t("deleteCustomerBody", { name: deleting.name })}
           confirmLabel={t("delete")}
           onConfirm={() => {
-            dispatch(productsSlice.removed({ scope, id: deleting.id }))
+            dispatch(customersSlice.removed({ scope, id: deleting.id }))
             setDeleting(null)
           }}
           onClose={() => setDeleting(null)}

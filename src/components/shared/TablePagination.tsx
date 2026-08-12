@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next"
 
 import { Button } from "@/components/ui/button"
 
-type ProductsPaginationProps = {
+type TablePaginationProps = {
   page: number
   pageCount: number
   from: number
@@ -12,14 +12,14 @@ type ProductsPaginationProps = {
   onPageChange: (page: number) => void
 }
 
-export function ProductsPagination({
+export function TablePagination({
   page,
   pageCount,
   from,
   to,
   total,
   onPageChange,
-}: ProductsPaginationProps) {
+}: TablePaginationProps) {
   const { t } = useTranslation()
 
   return (

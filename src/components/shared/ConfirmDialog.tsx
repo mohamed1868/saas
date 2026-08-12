@@ -9,15 +9,22 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
-import type { Product } from "@/features/private/products/types/products"
 
-type DeleteProductDialogProps = {
-  product: Product
+type ConfirmDialogProps = {
+  title: string
+  description: string
+  confirmLabel: string
   onConfirm: () => void
   onClose: () => void
 }
 
-export function DeleteProductDialog({ product, onConfirm, onClose }: DeleteProductDialogProps) {
+export function ConfirmDialog({
+  title,
+  description,
+  confirmLabel,
+  onConfirm,
+  onClose,
+}: ConfirmDialogProps) {
   const { t } = useTranslation()
 
   return (
@@ -28,9 +35,9 @@ export function DeleteProductDialog({ product, onConfirm, onClose }: DeleteProdu
             <span className="flex size-9 items-center justify-center rounded-full bg-destructive/15 text-destructive">
               <TriangleAlert className="size-4" />
             </span>
-            {t("deleteProduct")}
+            {title}
           </DialogTitle>
-          <DialogDescription>{t("deleteProductBody", { name: product.name })}</DialogDescription>
+          <DialogDescription>{description}</DialogDescription>
         </DialogHeader>
 
         <div className="flex justify-end gap-2 pt-2">
@@ -38,7 +45,7 @@ export function DeleteProductDialog({ product, onConfirm, onClose }: DeleteProdu
             {t("cancel")}
           </Button>
           <Button variant="destructive" onClick={onConfirm}>
-            {t("delete")}
+            {confirmLabel}
           </Button>
         </div>
       </DialogContent>

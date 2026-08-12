@@ -1,0 +1,26 @@
+{
+  "categories": [
+    "Accessories",
+    "Basins",
+    "Bathtubs",
+    "Drainage",
+    "Furniture",
+    "Mixers",
+    "Showers",
+    "Sinks",
+    "Toilets",
+    "Valves"
+  ],
+  "cities": [
+    "Alexandria",
+    "Aswan",
+    "Cairo",
+    "Giza",
+    "Ismailia",
+    "Luxor",
+    "Mansoura",
+    "Port Said",
+    "Suez",
+    "Tanta"
+  ]
+}

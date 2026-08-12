@@ -29,37 +29,40 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import {
-  PRODUCT_STATUSES,
-  type Product,
-  type ProductDraft,
-} from "@/features/private/products/types/products"
+  CUSTOMER_STATUSES,
+  CUSTOMER_TYPES,
+  type Customer,
+  type CustomerDraft,
+} from "@/features/private/customers/types/customers"
+
+const PHONE = /^[+0-9\s()-]{8,20}$/
 
 function buildSchema(t: (key: string) => string) {
   return z.object({
     name: z.string().trim().min(2, t("nameRequired")),
-    sku: z.string().trim().min(3, t("skuRequired")),
-    category: z.string().trim().min(2, t("categoryRequired")),
-    price: z.string().regex(/^\d+(\.\d{1,2})?$/, t("priceInvalid")),
-    stock: z.string().regex(/^\d+$/, t("stockInvalid")),
-    status: z.enum(PRODUCT_STATUSES),
+    email: z.email(t("emailInvalid")),
+    phone: z.string().trim().regex(PHONE, t("phoneInvalid")),
+    city: z.string().trim().min(2, t("cityRequired")),
+    type: z.enum(CUSTOMER_TYPES),
+    status: z.enum(CUSTOMER_STATUSES),
   })
 }
 
 type FormValues = z.infer<ReturnType<typeof buildSchema>>
 
-type ProductFormDialogProps = {
-  product: Product | null
-  categories: string[]
-  onSave: (draft: ProductDraft, id?: string) => void
+type CustomerFormDialogProps = {
+  customer: Customer | null
+  cities: string[]
+  onSave: (draft: CustomerDraft, id?: string) => void
   onClose: () => void
 }
 
-export function ProductFormDialog({
-  product,
-  categories,
+export function CustomerFormDialog({
+  customer,
+  cities,
   onSave,
   onClose,
-}: ProductFormDialogProps) {
+}: CustomerFormDialogProps) {
   const { t } = useTranslation()
   const schema = useMemo(() => buildSchema(t), [t])
 
@@ -67,12 +70,12 @@ export function ProductFormDialog({
     resolver: zodResolver(schema),
     mode: "onChange",
     defaultValues: {
-      name: product?.name ?? "",
-      sku: product?.sku ?? "",
-      category: product?.category ?? categories[0] ?? "",
-      price: product ? String(product.price) : "",
-      stock: product ? String(product.stock) : "",
-      status: product?.status ?? "active",
+      name: customer?.name ?? "",
+      email: customer?.email ?? "",
+      phone: customer?.phone ?? "",
+      city: customer?.city ?? cities[0] ?? "",
+      type: customer?.type ?? "retail",
+      status: customer?.status ?? "active",
     },
   })
 
@@ -80,13 +83,15 @@ export function ProductFormDialog({
     onSave(
       {
         name: values.name.trim(),
-        sku: values.sku.trim().toUpperCase(),
-        category: values.category.trim(),
-        price: Number(values.price),
-        stock: Number(values.stock),
+        email: values.email.trim(),
+        phone: values.phone.trim(),
+        city: values.city.trim(),
+        type: values.type,
         status: values.status,
+        orders: customer?.orders ?? 0,
+        totalSpent: customer?.totalSpent ?? 0,
       },
-      product?.id,
+      customer?.id,
     )
     onClose()
   }
@@ -95,9 +100,9 @@ export function ProductFormDialog({
     <Dialog open onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="sm:max-w-lg">
         <DialogHeader>
-          <DialogTitle>{product ? t("editProduct") : t("addProduct")}</DialogTitle>
+          <DialogTitle>{customer ? t("editCustomer") : t("addCustomer")}</DialogTitle>
           <DialogDescription>
-            {product ? t("editProductSubtitle") : t("addProductSubtitle")}
+            {customer ? t("editCustomerSubtitle") : t("addCustomerSubtitle")}
           </DialogDescription>
         </DialogHeader>
 
@@ -108,7 +113,7 @@ export function ProductFormDialog({
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>{t("productName")}</FormLabel>
+                  <FormLabel>{t("customerName")}</FormLabel>
                   <FormControl>
                     <Input className="h-11" {...field} />
                   </FormControl>
@@ -120,12 +125,12 @@ export function ProductFormDialog({
             <div className="grid gap-4 sm:grid-cols-2">
               <FormField
                 control={form.control}
-                name="sku"
+                name="email"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t("sku")}</FormLabel>
+                    <FormLabel>{t("email")}</FormLabel>
                     <FormControl>
-                      <Input dir="ltr" className="h-11 font-mono" {...field} />
+                      <Input dir="ltr" type="email" className="h-11" {...field} />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -134,18 +139,32 @@ export function ProductFormDialog({
 
               <FormField
                 control={form.control}
-                name="category"
+                name="phone"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t("category")}</FormLabel>
+                    <FormLabel>{t("phone")}</FormLabel>
+                    <FormControl>
+                      <Input dir="ltr" type="tel" className="h-11" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="city"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>{t("city")}</FormLabel>
                     <Select value={field.value} onValueChange={field.onChange}>
                       <FormControl>
                         <SelectTrigger className="h-11">
-                          <SelectValue placeholder={t("category")} />
+                          <SelectValue placeholder={t("city")} />
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent className="max-h-72">
-                        {categories.map((item) => (
+                        {cities.map((item) => (
                           <SelectItem key={item} value={item}>
                             {item}
                           </SelectItem>
@@ -159,27 +178,24 @@ export function ProductFormDialog({
 
               <FormField
                 control={form.control}
-                name="price"
+                name="type"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel>{t("price")}</FormLabel>
-                    <FormControl>
-                      <Input dir="ltr" inputMode="decimal" className="h-11" {...field} />
-                    </FormControl>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-
-              <FormField
-                control={form.control}
-                name="stock"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>{t("stock")}</FormLabel>
-                    <FormControl>
-                      <Input dir="ltr" inputMode="numeric" className="h-11" {...field} />
-                    </FormControl>
+                    <FormLabel>{t("customerType")}</FormLabel>
+                    <Select value={field.value} onValueChange={field.onChange}>
+                      <FormControl>
+                        <SelectTrigger className="h-11">
+                          <SelectValue />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {CUSTOMER_TYPES.map((item) => (
+                          <SelectItem key={item} value={item}>
+                            {t(`customerType_${item}`)}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -199,9 +215,9 @@ export function ProductFormDialog({
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      {PRODUCT_STATUSES.map((item) => (
+                      {CUSTOMER_STATUSES.map((item) => (
                         <SelectItem key={item} value={item}>
-                          {t(`status_${item}`)}
+                          {t(`customerStatus_${item}`)}
                         </SelectItem>
                       ))}
                     </SelectContent>
@@ -220,7 +236,7 @@ export function ProductFormDialog({
                 disabled={!form.formState.isValid}
                 className="bg-linear-to-r from-primary to-chart-3 text-white hover:brightness-110"
               >
-                {product ? t("saveChanges") : t("addProduct")}
+                {customer ? t("saveChanges") : t("addCustomer")}
               </Button>
             </div>
           </form>

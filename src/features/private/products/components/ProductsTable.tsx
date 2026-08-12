@@ -10,9 +10,16 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import { LOW_STOCK, STATUS_STYLES, formatPrice } from "@/features/private/products/lib/products"
-import type { Product } from "@/features/private/products/types/products"
-import { cn } from "@/lib/utils"
+import type { Product, ProductStatus } from "@/features/private/products/types/products"
+import { cn, formatMoney } from "@/lib/utils"
+
+const LOW_STOCK = 10
+
+const STATUS_STYLES: Record<ProductStatus, string> = {
+  active: "bg-chart-4/15 text-chart-4",
+  draft: "bg-chart-5/15 text-chart-5",
+  archived: "bg-muted text-muted-foreground",
+}
 
 type ProductsTableProps = {
   products: Product[]
@@ -58,7 +65,7 @@ export function ProductsTable({ products, onEdit, onDelete }: ProductsTableProps
             </TableCell>
 
             <TableCell dir="ltr" className="text-start text-sm font-medium tabular-nums">
-              {formatPrice(product.price)}
+              {formatMoney(product.price)}
             </TableCell>
 
             <TableCell>

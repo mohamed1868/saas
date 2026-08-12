@@ -13,3 +13,15 @@ export function initialsOf(name: string) {
 
   return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
 }
+
+export function formatMoney(value: number) {
+  return `$${value.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
+}
+
+export function mergeOptions(fromServer: string[] | undefined, fromRecords: string[]) {
+  return [...new Set([...(fromServer ?? []), ...fromRecords])].sort((a, b) => a.localeCompare(b))
+}
+
+export function dataScope(companyId: string, language: string) {
+  return `${companyId}:${language}`
+}
