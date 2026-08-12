@@ -14,16 +14,10 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { SidebarMenuButton, useSidebar } from "@/components/ui/sidebar"
 import { clearSession, getSession } from "@/features/public/login/lib/session"
+import { initialsOf } from "@/lib/utils"
 import { PATHS } from "@/app/router/paths"
 
 const GUEST = { name: "—", email: "", avatar: undefined }
-
-function initialsOf(name: string) {
-  const parts = name.trim().split(/\s+/).filter(Boolean)
-  if (parts.length === 0) return "?"
-  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase()
-  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
-}
 
 export function NavUser() {
   const { t } = useTranslation()

@@ -5,3 +5,4 @@ export const PlansPage = lazy(() => import("@/features/public/plans/pages/PlansP
 export const NotFoundPage = lazy(() => import("@/components/errors/NotFoundPage"))
 
 export const DashboardPage = lazy(() => import("@/features/private/dashboard/pages/DashboardPage"))
+export const ProductsPage = lazy(() => import("@/features/private/products/pages/ProductsPage"))

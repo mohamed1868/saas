@@ -22,7 +22,7 @@ export function TopProducts({
       <ul className="grid gap-4">
         {products.map((product) => (
           <li key={product.id} className="flex items-center gap-3">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary/30 to-chart-2/30 text-sm font-semibold">
+            <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-primary/30 to-chart-2/30 text-sm font-semibold">
               {product.name.charAt(0)}
             </span>
 

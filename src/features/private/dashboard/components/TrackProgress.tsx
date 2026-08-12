@@ -3,12 +3,7 @@ import { useTranslation } from "react-i18next"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { SectionCard } from "@/features/private/dashboard/components/SectionCard"
 import type { ProgressItem } from "@/features/private/dashboard/types/dashboard"
-
-function initialsOf(name: string) {
-  const parts = name.trim().split(/\s+/).filter(Boolean)
-  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase()
-  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
-}
+import { initialsOf } from "@/lib/utils"
 
 export function TrackProgress({
   items,
@@ -38,7 +33,7 @@ export function TrackProgress({
             <div className="flex w-24 shrink-0 items-center gap-2">
               <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
                 <div
-                  className="h-full rounded-full bg-gradient-to-r from-chart-2 to-chart-1"
+                  className="h-full rounded-full bg-linear-to-r from-chart-2 to-chart-1"
                   style={{ width: `${item.value}%` }}
                 />
               </div>

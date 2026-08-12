@@ -5,6 +5,5 @@ export const PATHS = {
   plans: "/plans",
 
   dashboard: "/dashboard",
+  products: "/dashboard/products",
 } as const
-
-export type Path = (typeof PATHS)[keyof typeof PATHS]

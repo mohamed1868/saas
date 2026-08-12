@@ -32,7 +32,7 @@ import { PATHS } from "@/app/router/paths"
 
 const NAV = [
   { key: "dashboard", icon: LayoutDashboard, to: PATHS.dashboard },
-  { key: "products", icon: Package },
+  { key: "products", icon: Package, to: PATHS.products },
   { key: "customers", icon: UsersRound },
   { key: "orders", icon: ShoppingCart },
   { key: "invoices", icon: ReceiptText },

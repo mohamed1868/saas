@@ -1,0 +1,218 @@
+[
+  {
+    "id": "aqa-001",
+    "name": "Ceramic Basin Pro",
+    "sku": "AQA-1000",
+    "category": "Basins",
+    "price": 89,
+    "stock": 0,
+    "status": "active"
+  },
+  {
+    "id": "aqa-002",
+    "name": "Thermostatic Shower Set",
+    "sku": "AQA-1007",
+    "category": "Showers",
+    "price": 138.75,
+    "stock": 3,
+    "status": "active"
+  },
+  {
+    "id": "aqa-003",
+    "name": "Wall-Hung Toilet",
+    "sku": "AQA-1014",
+    "category": "Toilets",
+    "price": 188.5,
+    "stock": 8,
+    "status": "active"
+  },
+  {
+    "id": "aqa-004",
+    "name": "Single Lever Mixer",
+    "sku": "AQA-1021",
+    "category": "Mixers",
+    "price": 238.25,
+    "stock": 24,
+    "status": "draft"
+  },
+  {
+    "id": "aqa-005",
+    "name": "Freestanding Bathtub",
+    "sku": "AQA-1028",
+    "category": "Bathtubs",
+    "price": 239,
+    "stock": 46,
+    "status": "active"
+  },
+  {
+    "id": "aqa-006",
+    "name": "Rain Shower Head 30cm",
+    "sku": "AQA-1035",
+    "category": "Showers",
+    "price": 288.75,
+    "stock": 92,
+    "status": "archived"
+  },
+  {
+    "id": "aqa-007",
+    "name": "Counter Top Basin",
+    "sku": "AQA-1042",
+    "category": "Basins",
+    "price": 338.5,
+    "stock": 137,
+    "status": "active"
+  },
+  {
+    "id": "aqa-008",
+    "name": "Concealed Cistern",
+    "sku": "AQA-1049",
+    "category": "Toilets",
+    "price": 388.25,
+    "stock": 210,
+    "status": "active"
+  },
+  {
+    "id": "aqa-009",
+    "name": "Kitchen Sink Mixer",
+    "sku": "AQA-1056",
+    "category": "Mixers",
+    "price": 389,
+    "stock": 0,
+    "status": "active"
+  },
+  {
+    "id": "aqa-010",
+    "name": "Heated Towel Rail",
+    "sku": "AQA-1063",
+    "category": "Accessories",
+    "price": 438.75,
+    "stock": 3,
+    "status": "draft"
+  },
+  {
+    "id": "aqa-011",
+    "name": "Corner Shower Tray",
+    "sku": "AQA-1070",
+    "category": "Showers",
+    "price": 488.5,
+    "stock": 8,
+    "status": "active"
+  },
+  {
+    "id": "aqa-012",
+    "name": "Bidet Spray Set",
+    "sku": "AQA-1077",
+    "category": "Accessories",
+    "price": 538.25,
+    "stock": 24,
+    "status": "archived"
+  },
+  {
+    "id": "aqa-013",
+    "name": "Double Bowl Sink",
+    "sku": "AQA-1084",
+    "category": "Sinks",
+    "price": 539,
+    "stock": 46,
+    "status": "active"
+  },
+  {
+    "id": "aqa-014",
+    "name": "Bathroom Mirror Cabinet",
+    "sku": "AQA-1091",
+    "category": "Furniture",
+    "price": 588.75,
+    "stock": 92,
+    "status": "active"
+  },
+  {
+    "id": "aqa-015",
+    "name": "Floor Drain Stainless",
+    "sku": "AQA-1098",
+    "category": "Drainage",
+    "price": 638.5,
+    "stock": 137,
+    "status": "active"
+  },
+  {
+    "id": "aqa-016",
+    "name": "Close Coupled Toilet",
+    "sku": "AQA-1105",
+    "category": "Toilets",
+    "price": 688.25,
+    "stock": 210,
+    "status": "draft"
+  },
+  {
+    "id": "aqa-017",
+    "name": "Pedestal Basin",
+    "sku": "AQA-1112",
+    "category": "Basins",
+    "price": 689,
+    "stock": 0,
+    "status": "active"
+  },
+  {
+    "id": "aqa-018",
+    "name": "Shower Enclosure 90cm",
+    "sku": "AQA-1119",
+    "category": "Showers",
+    "price": 738.75,
+    "stock": 3,
+    "status": "archived"
+  },
+  {
+    "id": "aqa-019",
+    "name": "Wall Mixer Chrome",
+    "sku": "AQA-1126",
+    "category": "Mixers",
+    "price": 788.5,
+    "stock": 8,
+    "status": "active"
+  },
+  {
+    "id": "aqa-020",
+    "name": "Vanity Unit 80cm",
+    "sku": "AQA-1133",
+    "category": "Furniture",
+    "price": 838.25,
+    "stock": 24,
+    "status": "active"
+  },
+  {
+    "id": "aqa-021",
+    "name": "Soap Dispenser Set",
+    "sku": "AQA-1140",
+    "category": "Accessories",
+    "price": 839,
+    "stock": 46,
+    "status": "active"
+  },
+  {
+    "id": "aqa-022",
+    "name": "Granite Sink 1.5 Bowl",
+    "sku": "AQA-1147",
+    "category": "Sinks",
+    "price": 888.75,
+    "stock": 92,
+    "status": "draft"
+  },
+  {
+    "id": "aqa-023",
+    "name": "Angle Valve Brass",
+    "sku": "AQA-1154",
+    "category": "Valves",
+    "price": 938.5,
+    "stock": 137,
+    "status": "active"
+  },
+  {
+    "id": "aqa-024",
+    "name": "Siphon Trap PVC",
+    "sku": "AQA-1161",
+    "category": "Drainage",
+    "price": 988.25,
+    "stock": 210,
+    "status": "archived"
+  }
+]
