@@ -104,6 +104,5 @@
   "nameRequired": "Name is required",
   "emailInvalid": "Enter a valid email",
   "phoneInvalid": "Enter a valid phone number",
-  "plansLoadFailed": "Couldn't load the plans.",
-  "sectionUnderConstruction": "This section is being built. It will be available shortly."
+  "plansLoadFailed": "Couldn't load the plans."
 }

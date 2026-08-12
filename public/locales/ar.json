@@ -104,6 +104,5 @@
   "nameRequired": "الاسم مطلوب",
   "emailInvalid": "اكتب بريدًا إلكترونيًا صحيحًا",
   "phoneInvalid": "اكتب رقم هاتف صحيح",
-  "plansLoadFailed": "تعذّر تحميل الباقات.",
-  "sectionUnderConstruction": "القسم ده تحت التنفيذ وهيكون متاح قريبًا."
+  "plansLoadFailed": "تعذّر تحميل الباقات."
 }
