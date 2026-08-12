@@ -25,3 +25,14 @@ export function mergeOptions(fromServer: string[] | undefined, fromRecords: stri
 export function dataScope(companyId: string, language: string) {
   return `${companyId}:${language}`
 }
+
+export function timestamp() {
+  return new Date().toISOString()
+}
+
+export function formatDateTime(iso: string, locale: string) {
+  return new Intl.DateTimeFormat(locale, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(new Date(iso))
+}

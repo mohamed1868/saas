@@ -12,6 +12,7 @@ import {
   OrdersPage,
   PlansPage,
   ProductsPage,
+  SupportPage,
 } from "@/app/router/lazyRoutes"
 import { PATHS } from "@/app/router/paths"
 import { ProtectedRoute } from "@/app/router/ProtectedRoute"
@@ -39,6 +40,7 @@ export const router = createBrowserRouter([
               { path: PATHS.products, element: <ProductsPage /> },
               { path: PATHS.customers, element: <CustomersPage /> },
               { path: PATHS.orders, element: <OrdersPage /> },
+              { path: PATHS.support, element: <SupportPage /> },
             ],
           },
         ],

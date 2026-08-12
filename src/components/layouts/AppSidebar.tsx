@@ -2,6 +2,7 @@ import {
   LayoutDashboard,
   Package,
   ReceiptText,
+  LifeBuoy,
   Settings,
   ShoppingCart,
   UsersRound,
@@ -37,6 +38,7 @@ const NAV = [
   { key: "orders", icon: ShoppingCart, to: PATHS.orders },
   { key: "invoices", icon: ReceiptText },
   { key: "finance", icon: Wallet },
+  { key: "support", icon: LifeBuoy, to: PATHS.support },
   { key: "settings", icon: Settings },
 ]
 

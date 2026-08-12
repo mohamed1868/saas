@@ -8,3 +8,4 @@ export const DashboardPage = lazy(() => import("@/features/private/pages/Dashboa
 export const ProductsPage = lazy(() => import("@/features/private/pages/ProductsPage"))
 export const CustomersPage = lazy(() => import("@/features/private/pages/CustomersPage"))
 export const OrdersPage = lazy(() => import("@/features/private/pages/OrdersPage"))
+export const SupportPage = lazy(() => import("@/features/private/pages/SupportPage"))

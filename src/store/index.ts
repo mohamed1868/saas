@@ -13,6 +13,7 @@ import {
 import customersReducer from "@/store/customersSlice"
 import ordersReducer from "@/store/ordersSlice"
 import productsReducer from "@/store/productsSlice"
+import supportReducer from "@/store/supportSlice"
 
 const storage = {
   getItem: (key: string) => Promise.resolve(localStorage.getItem(key)),
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   products: persistReducer(persisted("products"), productsReducer),
   customers: persistReducer(persisted("customers"), customersReducer),
   orders: persistReducer(persisted("orders"), ordersReducer),
+  support: persistReducer(persisted("support"), supportReducer),
 })
 
 export const store = configureStore({
