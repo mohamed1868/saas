@@ -5,10 +5,12 @@ import MainLayout from "@/components/layouts/MainLayout"
 import { PageFallback } from "@/components/shared/PageFallback"
 import ErrorPage from "@/components/errors/ErrorPage"
 import {
+  AccountPage,
   CustomersPage,
   DashboardPage,
   LoginPage,
   NotFoundPage,
+  NotificationsPage,
   OrdersPage,
   PlansPage,
   ProductsPage,
@@ -41,6 +43,8 @@ export const router = createBrowserRouter([
               { path: PATHS.customers, element: <CustomersPage /> },
               { path: PATHS.orders, element: <OrdersPage /> },
               { path: PATHS.support, element: <SupportPage /> },
+              { path: PATHS.account, element: <AccountPage /> },
+              { path: PATHS.notifications, element: <NotificationsPage /> },
             ],
           },
         ],

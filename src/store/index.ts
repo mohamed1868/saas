@@ -11,6 +11,7 @@ import {
 } from "redux-persist"
 
 import customersReducer from "@/store/customersSlice"
+import notificationsReducer from "@/store/notificationsSlice"
 import ordersReducer from "@/store/ordersSlice"
 import productsReducer from "@/store/productsSlice"
 import supportReducer from "@/store/supportSlice"
@@ -33,6 +34,7 @@ const rootReducer = combineReducers({
   customers: persistReducer(persisted("customers"), customersReducer),
   orders: persistReducer(persisted("orders"), ordersReducer),
   support: persistReducer(persisted("support"), supportReducer),
+  notifications: persistReducer(persisted("notifications"), notificationsReducer),
 })
 
 export const store = configureStore({

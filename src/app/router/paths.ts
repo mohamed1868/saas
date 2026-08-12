@@ -9,4 +9,6 @@ export const PATHS = {
   customers: "/dashboard/customers",
   orders: "/dashboard/orders",
   support: "/dashboard/support",
+  account: "/dashboard/account",
+  notifications: "/dashboard/notifications",
 } as const

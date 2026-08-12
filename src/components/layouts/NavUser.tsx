@@ -1,4 +1,4 @@
-import { BadgeCheck, Bell, ChevronsUpDown, CreditCard, LogOut } from "lucide-react"
+import { BadgeCheck, Bell, ChevronsUpDown, LogOut } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 
@@ -14,16 +14,23 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { SidebarMenuButton, useSidebar } from "@/components/ui/sidebar"
 import { clearSession, getSession } from "@/features/public/lib/session"
+import { dataScope } from "@/lib/utils"
+import { useAppSelector } from "@/store/hooks"
 import { initialsOf } from "@/lib/utils"
 import { PATHS } from "@/app/router/paths"
 
 const GUEST = { name: "—", email: "", avatar: undefined }
 
 export function NavUser() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const navigate = useNavigate()
   const { isMobile } = useSidebar()
-  const user = getSession() ?? GUEST
+  const session = getSession()
+  const user = session ?? GUEST
+  const scope = session ? dataScope(session.company.id, i18n.language) : ""
+  const unread = useAppSelector(
+    (state) => state.notifications.byScope[scope]?.filter((item) => !item.read).length ?? 0,
+  )
 
   function handleLogout() {
     clearSession()
@@ -73,17 +80,18 @@ export function NavUser() {
 
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={() => navigate(PATHS.account)}>
             <BadgeCheck />
             {t("account")}
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <CreditCard />
-            {t("billing")}
-          </DropdownMenuItem>
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={() => navigate(PATHS.notifications)}>
             <Bell />
             {t("notifications")}
+            {unread > 0 && (
+              <span className="ms-auto rounded-full bg-primary px-1.5 text-xs text-primary-foreground">
+                {unread}
+              </span>
+            )}
           </DropdownMenuItem>
         </DropdownMenuGroup>
 

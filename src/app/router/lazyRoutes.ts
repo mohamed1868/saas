@@ -9,3 +9,5 @@ export const ProductsPage = lazy(() => import("@/features/private/pages/Products
 export const CustomersPage = lazy(() => import("@/features/private/pages/CustomersPage"))
 export const OrdersPage = lazy(() => import("@/features/private/pages/OrdersPage"))
 export const SupportPage = lazy(() => import("@/features/private/pages/SupportPage"))
+export const AccountPage = lazy(() => import("@/features/private/pages/AccountPage"))
+export const NotificationsPage = lazy(() => import("@/features/private/pages/NotificationsPage"))
