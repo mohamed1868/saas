@@ -1,0 +1,218 @@
+[
+  {
+    "id": "vlt-001",
+    "name": "Smart Air Fryer 5L",
+    "sku": "VLT-1000",
+    "category": "Kitchen",
+    "price": 129,
+    "stock": 0,
+    "status": "active"
+  },
+  {
+    "id": "vlt-002",
+    "name": "Inverter AC 1.5 Ton",
+    "sku": "VLT-1007",
+    "category": "Cooling",
+    "price": 178.75,
+    "stock": 3,
+    "status": "active"
+  },
+  {
+    "id": "vlt-003",
+    "name": "Front Load Washer 8kg",
+    "sku": "VLT-1014",
+    "category": "Laundry",
+    "price": 228.5,
+    "stock": 8,
+    "status": "active"
+  },
+  {
+    "id": "vlt-004",
+    "name": "No-Frost Fridge 450L",
+    "sku": "VLT-1021",
+    "category": "Refrigeration",
+    "price": 278.25,
+    "stock": 24,
+    "status": "draft"
+  },
+  {
+    "id": "vlt-005",
+    "name": "Digital Microwave 30L",
+    "sku": "VLT-1028",
+    "category": "Kitchen",
+    "price": 279,
+    "stock": 46,
+    "status": "active"
+  },
+  {
+    "id": "vlt-006",
+    "name": "Power Blender 1200W",
+    "sku": "VLT-1035",
+    "category": "Kitchen",
+    "price": 328.75,
+    "stock": 92,
+    "status": "archived"
+  },
+  {
+    "id": "vlt-007",
+    "name": "Electric Water Heater 50L",
+    "sku": "VLT-1042",
+    "category": "Water Heating",
+    "price": 378.5,
+    "stock": 137,
+    "status": "active"
+  },
+  {
+    "id": "vlt-008",
+    "name": "Bagless Vacuum 2200W",
+    "sku": "VLT-1049",
+    "category": "Cleaning",
+    "price": 428.25,
+    "stock": 210,
+    "status": "active"
+  },
+  {
+    "id": "vlt-009",
+    "name": "4K Smart TV 55\"",
+    "sku": "VLT-1056",
+    "category": "Entertainment",
+    "price": 429,
+    "stock": 0,
+    "status": "active"
+  },
+  {
+    "id": "vlt-010",
+    "name": "Steam Iron 2400W",
+    "sku": "VLT-1063",
+    "category": "Laundry",
+    "price": 478.75,
+    "stock": 3,
+    "status": "draft"
+  },
+  {
+    "id": "vlt-011",
+    "name": "Electric Kettle 1.7L",
+    "sku": "VLT-1070",
+    "category": "Kitchen",
+    "price": 528.5,
+    "stock": 8,
+    "status": "active"
+  },
+  {
+    "id": "vlt-012",
+    "name": "Stand Fan 18\"",
+    "sku": "VLT-1077",
+    "category": "Cooling",
+    "price": 578.25,
+    "stock": 24,
+    "status": "archived"
+  },
+  {
+    "id": "vlt-013",
+    "name": "Deep Freezer 300L",
+    "sku": "VLT-1084",
+    "category": "Refrigeration",
+    "price": 579,
+    "stock": 46,
+    "status": "active"
+  },
+  {
+    "id": "vlt-014",
+    "name": "Coffee Maker 1.2L",
+    "sku": "VLT-1091",
+    "category": "Kitchen",
+    "price": 628.75,
+    "stock": 92,
+    "status": "active"
+  },
+  {
+    "id": "vlt-015",
+    "name": "Hand Mixer 500W",
+    "sku": "VLT-1098",
+    "category": "Kitchen",
+    "price": 678.5,
+    "stock": 137,
+    "status": "active"
+  },
+  {
+    "id": "vlt-016",
+    "name": "Split AC 2.25 Ton",
+    "sku": "VLT-1105",
+    "category": "Cooling",
+    "price": 728.25,
+    "stock": 210,
+    "status": "draft"
+  },
+  {
+    "id": "vlt-017",
+    "name": "Top Load Washer 12kg",
+    "sku": "VLT-1112",
+    "category": "Laundry",
+    "price": 729,
+    "stock": 0,
+    "status": "active"
+  },
+  {
+    "id": "vlt-018",
+    "name": "Robot Vacuum Pro",
+    "sku": "VLT-1119",
+    "category": "Cleaning",
+    "price": 778.75,
+    "stock": 3,
+    "status": "archived"
+  },
+  {
+    "id": "vlt-019",
+    "name": "Gas Water Heater 10L",
+    "sku": "VLT-1126",
+    "category": "Water Heating",
+    "price": 828.5,
+    "stock": 8,
+    "status": "active"
+  },
+  {
+    "id": "vlt-020",
+    "name": "Toaster 4 Slice",
+    "sku": "VLT-1133",
+    "category": "Kitchen",
+    "price": 878.25,
+    "stock": 24,
+    "status": "active"
+  },
+  {
+    "id": "vlt-021",
+    "name": "Soundbar 2.1",
+    "sku": "VLT-1140",
+    "category": "Entertainment",
+    "price": 879,
+    "stock": 46,
+    "status": "active"
+  },
+  {
+    "id": "vlt-022",
+    "name": "Tower Fan 45W",
+    "sku": "VLT-1147",
+    "category": "Cooling",
+    "price": 928.75,
+    "stock": 92,
+    "status": "draft"
+  },
+  {
+    "id": "vlt-023",
+    "name": "Dishwasher 12 Sets",
+    "sku": "VLT-1154",
+    "category": "Kitchen",
+    "price": 978.5,
+    "stock": 137,
+    "status": "active"
+  },
+  {
+    "id": "vlt-024",
+    "name": "Air Purifier HEPA",
+    "sku": "VLT-1161",
+    "category": "Cleaning",
+    "price": 1028.25,
+    "stock": 210,
+    "status": "archived"
+  }
+]

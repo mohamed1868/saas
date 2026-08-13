@@ -1,0 +1,39 @@
+[
+  {
+    "id": "starter",
+    "name": "Starter",
+    "description": "For a single store starting to organize its products and orders.",
+    "price": "$49",
+    "features": [
+      "One branch",
+      "Up to 200 products",
+      "Orders and printable invoices",
+      "Email support"
+    ]
+  },
+  {
+    "id": "growth",
+    "name": "Growth",
+    "description": "For a growing business that needs reports and more branches.",
+    "price": "$99",
+    "featured": true,
+    "features": [
+      "Up to 3 branches",
+      "Unlimited products",
+      "Profit and loss reports",
+      "Priority support"
+    ]
+  },
+  {
+    "id": "scale",
+    "name": "Scale",
+    "description": "For multi-branch operations with a full team on the system.",
+    "price": "$199",
+    "features": [
+      "Unlimited branches",
+      "Multiple users with roles",
+      "API access",
+      "Dedicated account manager"
+    ]
+  }
+]

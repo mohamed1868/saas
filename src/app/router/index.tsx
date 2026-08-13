@@ -4,7 +4,19 @@ import { createBrowserRouter, Navigate, Outlet } from "react-router-dom"
 import MainLayout from "@/components/layouts/MainLayout"
 import { PageFallback } from "@/components/shared/PageFallback"
 import ErrorPage from "@/components/errors/ErrorPage"
-import { DashboardPage, LoginPage, NotFoundPage } from "@/app/router/lazyRoutes"
+import {
+  AccountPage,
+  CustomersPage,
+  DashboardPage,
+  InvoicesPage,
+  LoginPage,
+  NotFoundPage,
+  NotificationsPage,
+  OrdersPage,
+  PlansPage,
+  ProductsPage,
+  SupportPage,
+} from "@/app/router/lazyRoutes"
 import { PATHS } from "@/app/router/paths"
 import { ProtectedRoute } from "@/app/router/ProtectedRoute"
 
@@ -18,6 +30,7 @@ export const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: PATHS.login, element: <LoginPage /> },
+      { path: PATHS.plans, element: <PlansPage /> },
 
       {
         element: <ProtectedRoute />,
@@ -27,6 +40,13 @@ export const router = createBrowserRouter([
             children: [
               { path: PATHS.root, element: <Navigate to={PATHS.dashboard} replace /> },
               { path: PATHS.dashboard, element: <DashboardPage /> },
+              { path: PATHS.products, element: <ProductsPage /> },
+              { path: PATHS.customers, element: <CustomersPage /> },
+              { path: PATHS.orders, element: <OrdersPage /> },
+              { path: PATHS.invoices, element: <InvoicesPage /> },
+              { path: PATHS.support, element: <SupportPage /> },
+              { path: PATHS.account, element: <AccountPage /> },
+              { path: PATHS.notifications, element: <NotificationsPage /> },
             ],
           },
         ],

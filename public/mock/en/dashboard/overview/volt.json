@@ -1,0 +1,249 @@
+{
+  "stats": [
+    {
+      "id": "products-in-stock",
+      "label": "Products in stock",
+      "value": "1,284",
+      "change": 8.4
+    },
+    {
+      "id": "orders-this-month",
+      "label": "Orders this month",
+      "value": "342",
+      "change": 12.6
+    },
+    {
+      "id": "active-customers",
+      "label": "Active customers",
+      "value": "196",
+      "change": 4.1
+    },
+    {
+      "id": "net-profit",
+      "label": "Net profit",
+      "value": "$84.2K",
+      "change": 11.3
+    }
+  ],
+  "visitors": {
+    "total": "150k",
+    "segments": [
+      {
+        "id": "organic",
+        "label": "Organic",
+        "value": 30
+      },
+      {
+        "id": "social",
+        "label": "Social",
+        "value": 50
+      },
+      {
+        "id": "direct",
+        "label": "Direct",
+        "value": 20
+      }
+    ]
+  },
+  "revenue": {
+    "total": "$240.8K",
+    "change": 12.4,
+    "range": "Jan 2026 – Dec 2026",
+    "series": [
+      {
+        "month": "Jan",
+        "current": 18,
+        "subscribers": 12,
+        "newCustomers": 7
+      },
+      {
+        "month": "Feb",
+        "current": 22,
+        "subscribers": 15,
+        "newCustomers": 9
+      },
+      {
+        "month": "Mar",
+        "current": 17,
+        "subscribers": 11,
+        "newCustomers": 6
+      },
+      {
+        "month": "Apr",
+        "current": 26,
+        "subscribers": 18,
+        "newCustomers": 11
+      },
+      {
+        "month": "May",
+        "current": 21,
+        "subscribers": 14,
+        "newCustomers": 8
+      },
+      {
+        "month": "Jun",
+        "current": 29,
+        "subscribers": 20,
+        "newCustomers": 13
+      },
+      {
+        "month": "Jul",
+        "current": 24,
+        "subscribers": 16,
+        "newCustomers": 10
+      },
+      {
+        "month": "Aug",
+        "current": 31,
+        "subscribers": 22,
+        "newCustomers": 14
+      },
+      {
+        "month": "Sep",
+        "current": 27,
+        "subscribers": 19,
+        "newCustomers": 12
+      },
+      {
+        "month": "Oct",
+        "current": 34,
+        "subscribers": 24,
+        "newCustomers": 16
+      },
+      {
+        "month": "Nov",
+        "current": 30,
+        "subscribers": 21,
+        "newCustomers": 13
+      },
+      {
+        "month": "Dec",
+        "current": 38,
+        "subscribers": 27,
+        "newCustomers": 18
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": "p1",
+      "name": "Smart Air Fryer 5L",
+      "category": "Kitchen appliances",
+      "price": "$189.00"
+    },
+    {
+      "id": "p2",
+      "name": "Inverter AC 1.5 Ton",
+      "category": "Cooling",
+      "price": "$736.10"
+    }
+  ],
+  "progress": [
+    {
+      "id": "u1",
+      "name": "Elena Rodriguez",
+      "email": "elena@fluxsync.com",
+      "value": 60
+    },
+    {
+      "id": "u2",
+      "name": "Marcus Chen",
+      "email": "marcus@fluxsync.com",
+      "value": 39
+    },
+    {
+      "id": "u3",
+      "name": "Aisha Patel",
+      "email": "aisha@fluxsync.com",
+      "value": 15
+    }
+  ],
+  "sales": {
+    "value": 80,
+    "segments": [
+      {
+        "id": "delivered",
+        "label": "Delivered",
+        "value": 80
+      },
+      {
+        "id": "shipping",
+        "label": "Shipping",
+        "value": 14
+      },
+      {
+        "id": "returned",
+        "label": "Returned",
+        "value": 6
+      }
+    ]
+  },
+  "orders": [
+    {
+      "id": "#1532",
+      "client": {
+        "name": "John Carter",
+        "email": "john@carterhome.com"
+      },
+      "date": "Aug 09, 2026",
+      "status": "complete",
+      "country": "United States",
+      "total": "$1,129.24"
+    },
+    {
+      "id": "#1531",
+      "client": {
+        "name": "Sophie Moore",
+        "email": "sophie@moorehome.co.uk"
+      },
+      "date": "Aug 07, 2026",
+      "status": "cancelled",
+      "country": "United Kingdom",
+      "total": "$1,870.10"
+    },
+    {
+      "id": "#1530",
+      "client": {
+        "name": "Matt Cannon",
+        "email": "matt@cannonstore.au"
+      },
+      "date": "Aug 05, 2026",
+      "status": "complete",
+      "country": "Australia",
+      "total": "$2,489.45"
+    },
+    {
+      "id": "#1529",
+      "client": {
+        "name": "Graham Hills",
+        "email": "graham@hillselectro.in"
+      },
+      "date": "Aug 02, 2026",
+      "status": "pending",
+      "country": "India",
+      "total": "$918.90"
+    },
+    {
+      "id": "#1528",
+      "client": {
+        "name": "Sandy Houston",
+        "email": "sandy@houston.de"
+      },
+      "date": "Jul 30, 2026",
+      "status": "complete",
+      "country": "Germany",
+      "total": "$1,610.15"
+    },
+    {
+      "id": "#1527",
+      "client": {
+        "name": "Andy Smith",
+        "email": "andy@smithappliance.ca"
+      },
+      "date": "Jul 28, 2026",
+      "status": "pending",
+      "country": "Canada",
+      "total": "$2,124.60"
+    }
+  ]
+}

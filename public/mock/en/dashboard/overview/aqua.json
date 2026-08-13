@@ -1,0 +1,249 @@
+{
+  "stats": [
+    {
+      "id": "products-in-stock",
+      "label": "Products in stock",
+      "value": "612",
+      "change": 5.2
+    },
+    {
+      "id": "orders-this-month",
+      "label": "Orders this month",
+      "value": "148",
+      "change": -6.4
+    },
+    {
+      "id": "active-customers",
+      "label": "Active customers",
+      "value": "87",
+      "change": 9.8
+    },
+    {
+      "id": "net-profit",
+      "label": "Net profit",
+      "value": "$31.6K",
+      "change": 6.7
+    }
+  ],
+  "visitors": {
+    "total": "46k",
+    "segments": [
+      {
+        "id": "organic",
+        "label": "Organic",
+        "value": 44
+      },
+      {
+        "id": "social",
+        "label": "Social",
+        "value": 31
+      },
+      {
+        "id": "direct",
+        "label": "Direct",
+        "value": 25
+      }
+    ]
+  },
+  "revenue": {
+    "total": "$96.4K",
+    "change": 6.7,
+    "range": "Jan 2026 – Dec 2026",
+    "series": [
+      {
+        "month": "Jan",
+        "current": 10,
+        "subscribers": 7,
+        "newCustomers": 5
+      },
+      {
+        "month": "Feb",
+        "current": 13,
+        "subscribers": 9,
+        "newCustomers": 6
+      },
+      {
+        "month": "Mar",
+        "current": 11,
+        "subscribers": 7,
+        "newCustomers": 4
+      },
+      {
+        "month": "Apr",
+        "current": 14,
+        "subscribers": 11,
+        "newCustomers": 8
+      },
+      {
+        "month": "May",
+        "current": 13,
+        "subscribers": 8,
+        "newCustomers": 6
+      },
+      {
+        "month": "Jun",
+        "current": 18,
+        "subscribers": 12,
+        "newCustomers": 9
+      },
+      {
+        "month": "Jul",
+        "current": 13,
+        "subscribers": 10,
+        "newCustomers": 7
+      },
+      {
+        "month": "Aug",
+        "current": 18,
+        "subscribers": 13,
+        "newCustomers": 10
+      },
+      {
+        "month": "Sep",
+        "current": 17,
+        "subscribers": 11,
+        "newCustomers": 8
+      },
+      {
+        "month": "Oct",
+        "current": 19,
+        "subscribers": 14,
+        "newCustomers": 11
+      },
+      {
+        "month": "Nov",
+        "current": 18,
+        "subscribers": 13,
+        "newCustomers": 9
+      },
+      {
+        "month": "Dec",
+        "current": 23,
+        "subscribers": 16,
+        "newCustomers": 13
+      }
+    ]
+  },
+  "products": [
+    {
+      "id": "p1",
+      "name": "Ceramic Basin Pro",
+      "category": "Basins",
+      "price": "$214.00"
+    },
+    {
+      "id": "p2",
+      "name": "Thermostatic Shower Set",
+      "category": "Showers",
+      "price": "$389.50"
+    }
+  ],
+  "progress": [
+    {
+      "id": "u1",
+      "name": "Nadia Fahmy",
+      "email": "nadia@aquacare.com",
+      "value": 72
+    },
+    {
+      "id": "u2",
+      "name": "Omar Khaled",
+      "email": "omar@aquacare.com",
+      "value": 45
+    },
+    {
+      "id": "u3",
+      "name": "Lina Saad",
+      "email": "lina@aquacare.com",
+      "value": 23
+    }
+  ],
+  "sales": {
+    "value": 68,
+    "segments": [
+      {
+        "id": "delivered",
+        "label": "Delivered",
+        "value": 68
+      },
+      {
+        "id": "shipping",
+        "label": "Shipping",
+        "value": 22
+      },
+      {
+        "id": "returned",
+        "label": "Returned",
+        "value": 10
+      }
+    ]
+  },
+  "orders": [
+    {
+      "id": "#0871",
+      "client": {
+        "name": "Hassan Yousri",
+        "email": "hassan@bathstyle.eg"
+      },
+      "date": "Aug 10, 2026",
+      "status": "complete",
+      "country": "Egypt",
+      "total": "$742.00"
+    },
+    {
+      "id": "#0870",
+      "client": {
+        "name": "Layla Mansour",
+        "email": "layla@aquadesign.ae"
+      },
+      "date": "Aug 08, 2026",
+      "status": "pending",
+      "country": "United Arab Emirates",
+      "total": "$1,268.40"
+    },
+    {
+      "id": "#0869",
+      "client": {
+        "name": "Karim Adel",
+        "email": "karim@sanitaryhub.sa"
+      },
+      "date": "Aug 06, 2026",
+      "status": "complete",
+      "country": "Saudi Arabia",
+      "total": "$958.75"
+    },
+    {
+      "id": "#0868",
+      "client": {
+        "name": "Dina Rashad",
+        "email": "dina@homeplus.jo"
+      },
+      "date": "Aug 03, 2026",
+      "status": "cancelled",
+      "country": "Jordan",
+      "total": "$431.20"
+    },
+    {
+      "id": "#0867",
+      "client": {
+        "name": "Youssef Nabil",
+        "email": "youssef@bathpro.eg"
+      },
+      "date": "Jul 31, 2026",
+      "status": "complete",
+      "country": "Egypt",
+      "total": "$1,504.90"
+    },
+    {
+      "id": "#0866",
+      "client": {
+        "name": "Mona Farid",
+        "email": "mona@sanitaryline.kw"
+      },
+      "date": "Jul 29, 2026",
+      "status": "pending",
+      "country": "Kuwait",
+      "total": "$689.30"
+    }
+  ]
+}

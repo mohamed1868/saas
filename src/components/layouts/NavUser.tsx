@@ -1,4 +1,4 @@
-import { BadgeCheck, Bell, ChevronsUpDown, CreditCard, LogOut } from "lucide-react"
+import { BadgeCheck, Bell, ChevronsUpDown, LogOut } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 
@@ -13,40 +13,26 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { SidebarMenuButton, useSidebar } from "@/components/ui/sidebar"
+import { clearSession, getSession } from "@/features/public/lib/session"
+import { dataScope, initialsOf } from "@/lib/utils"
+import { useAppSelector } from "@/store/hooks"
 import { PATHS } from "@/app/router/paths"
 
-type User = {
-  name: string
-  email: string
-  avatar?: string
-}
-
-function readUser(): User {
-  try {
-    const raw = localStorage.getItem("user")
-    if (raw) return JSON.parse(raw) as User
-  } catch {
-    localStorage.removeItem("user")
-  }
-  return { name: "—", email: "" }
-}
-
-function initialsOf(name: string) {
-  const parts = name.trim().split(/\s+/).filter(Boolean)
-  if (parts.length === 0) return "?"
-  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase()
-  return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
-}
+const GUEST = { name: "—", email: "", avatar: undefined }
 
 export function NavUser() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const navigate = useNavigate()
   const { isMobile } = useSidebar()
-  const user = readUser()
+  const session = getSession()
+  const user = session ?? GUEST
+  const scope = session ? dataScope(session.company.id, i18n.language) : ""
+  const unread = useAppSelector(
+    (state) => state.notifications.byScope[scope]?.filter((item) => !item.read).length ?? 0,
+  )
 
   function handleLogout() {
-    localStorage.removeItem("token")
-    localStorage.removeItem("user")
+    clearSession()
     navigate(PATHS.login, { replace: true })
   }
 
@@ -93,17 +79,18 @@ export function NavUser() {
 
         <DropdownMenuSeparator />
         <DropdownMenuGroup>
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={() => navigate(PATHS.account)}>
             <BadgeCheck />
             {t("account")}
           </DropdownMenuItem>
-          <DropdownMenuItem>
-            <CreditCard />
-            {t("billing")}
-          </DropdownMenuItem>
-          <DropdownMenuItem>
+          <DropdownMenuItem onClick={() => navigate(PATHS.notifications)}>
             <Bell />
             {t("notifications")}
+            {unread > 0 && (
+              <span className="ms-auto rounded-full bg-primary px-1.5 text-xs text-primary-foreground">
+                {unread}
+              </span>
+            )}
           </DropdownMenuItem>
         </DropdownMenuGroup>
 

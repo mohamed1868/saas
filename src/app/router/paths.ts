@@ -2,15 +2,14 @@ export const PATHS = {
   root: "/",
 
   login: "/login",
-  register: "/register",
+  plans: "/plans",
 
   dashboard: "/dashboard",
-  reports: "/dashboard/reports",
   products: "/dashboard/products",
-  tasks: "/dashboard/tasks",
-  users: "/users",
-  pricing: "/pricing",
-  settings: "/settings",
+  customers: "/dashboard/customers",
+  orders: "/dashboard/orders",
+  invoices: "/dashboard/invoices",
+  support: "/dashboard/support",
+  account: "/dashboard/account",
+  notifications: "/dashboard/notifications",
 } as const
-
-export type Path = (typeof PATHS)[keyof typeof PATHS]

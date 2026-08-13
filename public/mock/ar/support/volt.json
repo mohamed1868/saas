@@ -1,0 +1,331 @@
+[
+  {
+    "id": "tkt-volt-001",
+    "number": "TCK-1200",
+    "subject": "فاتورة PDF مش بتتحمّل",
+    "category": "technical",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2026-07-01T09:00:00.000Z",
+    "updatedAt": "2026-07-01T09:00:00.000Z",
+    "messages": [
+      {
+        "id": "msg-1-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "جرّبنا من كروم وإيدج والملف مش بيبدأ يتحمّل خالص. نشوف إيه؟",
+        "at": "2026-07-01T09:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-002",
+    "number": "TCK-1201",
+    "subject": "محتاجين رفع منتجات بالجملة",
+    "category": "feature",
+    "priority": "medium",
+    "status": "pending",
+    "createdAt": "2026-07-02T10:07:00.000Z",
+    "updatedAt": "2026-07-02T13:11:00.000Z",
+    "messages": [
+      {
+        "id": "msg-2-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "قايمة الموردين بتيجي على إكسل، ورفعها واحد واحد بياخد ساعات.",
+        "at": "2026-07-02T10:07:00.000Z"
+      },
+      {
+        "id": "msg-2-2",
+        "from": "support",
+        "author": "دعم FluxSync",
+        "body": "اقتراح ممتاز، هو ضمن خطتنا وهنبلغك أول ما يتنفذ.",
+        "at": "2026-07-02T13:11:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-003",
+    "number": "TCK-1202",
+    "subject": "يوزرين مش عارفين يدخلوا",
+    "category": "account",
+    "priority": "low",
+    "status": "resolved",
+    "createdAt": "2026-07-03T11:14:00.000Z",
+    "updatedAt": "2026-07-03T14:22:00.000Z",
+    "messages": [
+      {
+        "id": "msg-3-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "الحسابين بيطلعوا نفس رسالة الخطأ بعد إدخال الباسورد.",
+        "at": "2026-07-03T11:14:00.000Z"
+      },
+      {
+        "id": "msg-3-2",
+        "from": "support",
+        "author": "دعم FluxSync",
+        "body": "ممكن تبعتلنا صورة من رسالة الخطأ عشان نراجع السجلات؟",
+        "at": "2026-07-03T14:22:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-004",
+    "number": "TCK-1203",
+    "subject": "المخزون اتغيّر غلط بعد أوردر",
+    "category": "technical",
+    "priority": "urgent",
+    "status": "closed",
+    "createdAt": "2026-07-04T12:21:00.000Z",
+    "updatedAt": "2026-07-04T12:21:00.000Z",
+    "messages": [
+      {
+        "id": "msg-4-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "بعد آخر أوردر المخزون نقص أكتر من الكمية المطلوبة.",
+        "at": "2026-07-04T12:21:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-005",
+    "number": "TCK-1204",
+    "subject": "عايزين نضيف فرع تاني على الباقة",
+    "category": "billing",
+    "priority": "medium",
+    "status": "open",
+    "createdAt": "2026-07-05T13:28:00.000Z",
+    "updatedAt": "2026-07-05T16:44:00.000Z",
+    "messages": [
+      {
+        "id": "msg-5-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "هنفتح فرع جديد الشهر الجاي وعايزينه على نفس الحساب.",
+        "at": "2026-07-05T13:28:00.000Z"
+      },
+      {
+        "id": "msg-5-2",
+        "from": "support",
+        "author": "دعم FluxSync",
+        "body": "شكرًا لتواصلك — قدرنا نعيد المشكلة والإصلاح نازل الأسبوع ده.",
+        "at": "2026-07-05T16:44:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-006",
+    "number": "TCK-1205",
+    "subject": "تنسيق الفاتورة بالعربي مش مظبوط",
+    "category": "technical",
+    "priority": "low",
+    "status": "resolved",
+    "createdAt": "2026-07-06T14:35:00.000Z",
+    "updatedAt": "2026-07-06T12:55:00.000Z",
+    "messages": [
+      {
+        "id": "msg-6-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "جرّبنا من كروم وإيدج والملف مش بيبدأ يتحمّل خالص. نشوف إيه؟",
+        "at": "2026-07-06T14:35:00.000Z"
+      },
+      {
+        "id": "msg-6-2",
+        "from": "support",
+        "author": "دعم FluxSync",
+        "body": "اقتراح ممتاز، هو ضمن خطتنا وهنبلغك أول ما يتنفذ.",
+        "at": "2026-07-06T12:55:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-007",
+    "number": "TCK-1206",
+    "subject": "الدفع فشل بس الباقة اتجددت",
+    "category": "technical",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2026-07-07T09:42:00.000Z",
+    "updatedAt": "2026-07-07T09:42:00.000Z",
+    "messages": [
+      {
+        "id": "msg-7-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "قايمة الموردين بتيجي على إكسل، ورفعها واحد واحد بياخد ساعات.",
+        "at": "2026-07-07T09:42:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-008",
+    "number": "TCK-1207",
+    "subject": "تصدير الأوردرات على إكسل",
+    "category": "feature",
+    "priority": "medium",
+    "status": "pending",
+    "createdAt": "2026-07-08T10:49:00.000Z",
+    "updatedAt": "2026-07-08T14:17:00.000Z",
+    "messages": [
+      {
+        "id": "msg-8-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "الحسابين بيطلعوا نفس رسالة الخطأ بعد إدخال الباسورد.",
+        "at": "2026-07-08T10:49:00.000Z"
+      },
+      {
+        "id": "msg-8-2",
+        "from": "support",
+        "author": "دعم FluxSync",
+        "body": "المشكلة اتظبطت على حسابك، اعمل تحديث للصفحة وجرّب تاني.",
+        "at": "2026-07-08T14:17:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-009",
+    "number": "TCK-1208",
+    "subject": "صفحة الأوردرات بطيئة",
+    "category": "account",
+    "priority": "low",
+    "status": "resolved",
+    "createdAt": "2026-07-09T11:56:00.000Z",
+    "updatedAt": "2026-07-09T15:28:00.000Z",
+    "messages": [
+      {
+        "id": "msg-9-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "بعد آخر أوردر المخزون نقص أكتر من الكمية المطلوبة.",
+        "at": "2026-07-09T11:56:00.000Z"
+      },
+      {
+        "id": "msg-9-2",
+        "from": "support",
+        "author": "دعم FluxSync",
+        "body": "شكرًا لتواصلك — قدرنا نعيد المشكلة والإصلاح نازل الأسبوع ده.",
+        "at": "2026-07-09T15:28:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-010",
+    "number": "TCK-1209",
+    "subject": "تغيير إيميل مالك الحساب",
+    "category": "technical",
+    "priority": "urgent",
+    "status": "closed",
+    "createdAt": "2026-07-10T12:03:00.000Z",
+    "updatedAt": "2026-07-10T12:03:00.000Z",
+    "messages": [
+      {
+        "id": "msg-10-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "هنفتح فرع جديد الشهر الجاي وعايزينه على نفس الحساب.",
+        "at": "2026-07-10T12:03:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-011",
+    "number": "TCK-1210",
+    "subject": "فاتورة PDF مش بتتحمّل",
+    "category": "billing",
+    "priority": "medium",
+    "status": "open",
+    "createdAt": "2026-07-11T13:10:00.000Z",
+    "updatedAt": "2026-07-11T12:50:00.000Z",
+    "messages": [
+      {
+        "id": "msg-11-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "جرّبنا من كروم وإيدج والملف مش بيبدأ يتحمّل خالص. نشوف إيه؟",
+        "at": "2026-07-11T13:10:00.000Z"
+      },
+      {
+        "id": "msg-11-2",
+        "from": "support",
+        "author": "دعم FluxSync",
+        "body": "ممكن تبعتلنا صورة من رسالة الخطأ عشان نراجع السجلات؟",
+        "at": "2026-07-11T12:50:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-012",
+    "number": "TCK-1211",
+    "subject": "محتاجين رفع منتجات بالجملة",
+    "category": "technical",
+    "priority": "low",
+    "status": "resolved",
+    "createdAt": "2026-07-12T14:17:00.000Z",
+    "updatedAt": "2026-07-12T13:01:00.000Z",
+    "messages": [
+      {
+        "id": "msg-12-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "قايمة الموردين بتيجي على إكسل، ورفعها واحد واحد بياخد ساعات.",
+        "at": "2026-07-12T14:17:00.000Z"
+      },
+      {
+        "id": "msg-12-2",
+        "from": "support",
+        "author": "دعم FluxSync",
+        "body": "المشكلة اتظبطت على حسابك، اعمل تحديث للصفحة وجرّب تاني.",
+        "at": "2026-07-12T13:01:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-013",
+    "number": "TCK-1212",
+    "subject": "يوزرين مش عارفين يدخلوا",
+    "category": "technical",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2026-07-13T09:24:00.000Z",
+    "updatedAt": "2026-07-13T09:24:00.000Z",
+    "messages": [
+      {
+        "id": "msg-13-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "الحسابين بيطلعوا نفس رسالة الخطأ بعد إدخال الباسورد.",
+        "at": "2026-07-13T09:24:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-014",
+    "number": "TCK-1213",
+    "subject": "المخزون اتغيّر غلط بعد أوردر",
+    "category": "feature",
+    "priority": "medium",
+    "status": "pending",
+    "createdAt": "2026-07-14T10:31:00.000Z",
+    "updatedAt": "2026-07-14T15:23:00.000Z",
+    "messages": [
+      {
+        "id": "msg-14-1",
+        "from": "company",
+        "author": "محمد سيد",
+        "body": "بعد آخر أوردر المخزون نقص أكتر من الكمية المطلوبة.",
+        "at": "2026-07-14T10:31:00.000Z"
+      },
+      {
+        "id": "msg-14-2",
+        "from": "support",
+        "author": "دعم FluxSync",
+        "body": "اقتراح ممتاز، هو ضمن خطتنا وهنبلغك أول ما يتنفذ.",
+        "at": "2026-07-14T15:23:00.000Z"
+      }
+    ]
+  }
+]

@@ -7,7 +7,7 @@ export const LANGUAGES = [
   { code: "ar", label: "العربية", dir: "rtl" },
 ] as const
 
-export function applyDirection(code: string) {
+function applyDirection(code: string) {
   const language = LANGUAGES.find((l) => l.code === code) ?? LANGUAGES[0]
   document.documentElement.lang = language.code
   document.documentElement.dir = language.dir

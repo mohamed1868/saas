@@ -1,0 +1,218 @@
+[
+  {
+    "id": "vlt-001",
+    "name": "قلاية هوائية ذكية ٥ لتر",
+    "sku": "VLT-1000",
+    "category": "مطبخ",
+    "price": 129,
+    "stock": 0,
+    "status": "active"
+  },
+  {
+    "id": "vlt-002",
+    "name": "تكييف إنفرتر ١.٥ حصان",
+    "sku": "VLT-1007",
+    "category": "تبريد",
+    "price": 178.75,
+    "stock": 3,
+    "status": "active"
+  },
+  {
+    "id": "vlt-003",
+    "name": "غسالة أوتوماتيك ٨ كجم",
+    "sku": "VLT-1014",
+    "category": "غسيل",
+    "price": 228.5,
+    "stock": 8,
+    "status": "active"
+  },
+  {
+    "id": "vlt-004",
+    "name": "ثلاجة نوفروست ٤٥٠ لتر",
+    "sku": "VLT-1021",
+    "category": "تبريد وتجميد",
+    "price": 278.25,
+    "stock": 24,
+    "status": "draft"
+  },
+  {
+    "id": "vlt-005",
+    "name": "ميكروويف ديجيتال ٣٠ لتر",
+    "sku": "VLT-1028",
+    "category": "مطبخ",
+    "price": 279,
+    "stock": 46,
+    "status": "active"
+  },
+  {
+    "id": "vlt-006",
+    "name": "خلاط قوي ١٢٠٠ وات",
+    "sku": "VLT-1035",
+    "category": "مطبخ",
+    "price": 328.75,
+    "stock": 92,
+    "status": "archived"
+  },
+  {
+    "id": "vlt-007",
+    "name": "سخان كهربائي ٥٠ لتر",
+    "sku": "VLT-1042",
+    "category": "سخانات",
+    "price": 378.5,
+    "stock": 137,
+    "status": "active"
+  },
+  {
+    "id": "vlt-008",
+    "name": "مكنسة بدون كيس ٢٢٠٠ وات",
+    "sku": "VLT-1049",
+    "category": "تنظيف",
+    "price": 428.25,
+    "stock": 210,
+    "status": "active"
+  },
+  {
+    "id": "vlt-009",
+    "name": "تلفزيون ذكي ٤K مقاس ٥٥",
+    "sku": "VLT-1056",
+    "category": "ترفيه",
+    "price": 429,
+    "stock": 0,
+    "status": "active"
+  },
+  {
+    "id": "vlt-010",
+    "name": "مكواة بخار ٢٤٠٠ وات",
+    "sku": "VLT-1063",
+    "category": "غسيل",
+    "price": 478.75,
+    "stock": 3,
+    "status": "draft"
+  },
+  {
+    "id": "vlt-011",
+    "name": "غلاية كهربائية ١.٧ لتر",
+    "sku": "VLT-1070",
+    "category": "مطبخ",
+    "price": 528.5,
+    "stock": 8,
+    "status": "active"
+  },
+  {
+    "id": "vlt-012",
+    "name": "مروحة عمود ١٨ بوصة",
+    "sku": "VLT-1077",
+    "category": "تبريد",
+    "price": 578.25,
+    "stock": 24,
+    "status": "archived"
+  },
+  {
+    "id": "vlt-013",
+    "name": "ديب فريزر ٣٠٠ لتر",
+    "sku": "VLT-1084",
+    "category": "تبريد وتجميد",
+    "price": 579,
+    "stock": 46,
+    "status": "active"
+  },
+  {
+    "id": "vlt-014",
+    "name": "ماكينة قهوة ١.٢ لتر",
+    "sku": "VLT-1091",
+    "category": "مطبخ",
+    "price": 628.75,
+    "stock": 92,
+    "status": "active"
+  },
+  {
+    "id": "vlt-015",
+    "name": "مضرب يدوي ٥٠٠ وات",
+    "sku": "VLT-1098",
+    "category": "مطبخ",
+    "price": 678.5,
+    "stock": 137,
+    "status": "active"
+  },
+  {
+    "id": "vlt-016",
+    "name": "تكييف سبليت ٢.٢٥ حصان",
+    "sku": "VLT-1105",
+    "category": "تبريد",
+    "price": 728.25,
+    "stock": 210,
+    "status": "draft"
+  },
+  {
+    "id": "vlt-017",
+    "name": "غسالة فوق أوتوماتيك ١٢ كجم",
+    "sku": "VLT-1112",
+    "category": "غسيل",
+    "price": 729,
+    "stock": 0,
+    "status": "active"
+  },
+  {
+    "id": "vlt-018",
+    "name": "مكنسة روبوت برو",
+    "sku": "VLT-1119",
+    "category": "تنظيف",
+    "price": 778.75,
+    "stock": 3,
+    "status": "archived"
+  },
+  {
+    "id": "vlt-019",
+    "name": "سخان غاز ١٠ لتر",
+    "sku": "VLT-1126",
+    "category": "سخانات",
+    "price": 828.5,
+    "stock": 8,
+    "status": "active"
+  },
+  {
+    "id": "vlt-020",
+    "name": "محمصة خبز ٤ شرائح",
+    "sku": "VLT-1133",
+    "category": "مطبخ",
+    "price": 878.25,
+    "stock": 24,
+    "status": "active"
+  },
+  {
+    "id": "vlt-021",
+    "name": "ساوند بار ٢.١",
+    "sku": "VLT-1140",
+    "category": "ترفيه",
+    "price": 879,
+    "stock": 46,
+    "status": "active"
+  },
+  {
+    "id": "vlt-022",
+    "name": "مروحة برجية ٤٥ وات",
+    "sku": "VLT-1147",
+    "category": "تبريد",
+    "price": 928.75,
+    "stock": 92,
+    "status": "draft"
+  },
+  {
+    "id": "vlt-023",
+    "name": "غسالة أطباق ١٢ فرد",
+    "sku": "VLT-1154",
+    "category": "مطبخ",
+    "price": 978.5,
+    "stock": 137,
+    "status": "active"
+  },
+  {
+    "id": "vlt-024",
+    "name": "منقي هواء HEPA",
+    "sku": "VLT-1161",
+    "category": "تنظيف",
+    "price": 1028.25,
+    "stock": 210,
+    "status": "archived"
+  }
+]

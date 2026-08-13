@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ntf-volt-001",
+    "type": "order",
+    "title": "New order received",
+    "body": "Order #2400 from John Carter for $1,129.24.",
+    "at": "2026-08-12T18:00:00.000Z",
+    "read": false
+  },
+  {
+    "id": "ntf-volt-002",
+    "type": "stock",
+    "title": "Low stock warning",
+    "body": "Smart Air Fryer 5L is down to 3 units.",
+    "at": "2026-08-12T17:13:00.000Z",
+    "read": false
+  },
+  {
+    "id": "ntf-volt-003",
+    "type": "support",
+    "title": "Support replied",
+    "body": "Our team replied to ticket TCK-1203.",
+    "at": "2026-08-11T16:26:00.000Z",
+    "read": false
+  },
+  {
+    "id": "ntf-volt-004",
+    "type": "order",
+    "title": "Order delivered",
+    "body": "Order #2396 was delivered successfully.",
+    "at": "2026-08-11T15:39:00.000Z",
+    "read": false
+  },
+  {
+    "id": "ntf-volt-005",
+    "type": "system",
+    "title": "Plan renewal reminder",
+    "body": "Your Growth plan renews in 21 days.",
+    "at": "2026-08-10T14:52:00.000Z",
+    "read": false
+  },
+  {
+    "id": "ntf-volt-006",
+    "type": "stock",
+    "title": "Out of stock",
+    "body": "Inverter AC 1.5 Ton is out of stock.",
+    "at": "2026-08-10T13:05:00.000Z",
+    "read": true
+  },
+  {
+    "id": "ntf-volt-007",
+    "type": "order",
+    "title": "Order cancelled",
+    "body": "Order #2395 was cancelled by the customer.",
+    "at": "2026-08-09T12:18:00.000Z",
+    "read": true
+  },
+  {
+    "id": "ntf-volt-008",
+    "type": "support",
+    "title": "Ticket resolved",
+    "body": "Ticket TCK-1201 was marked as resolved.",
+    "at": "2026-08-09T11:31:00.000Z",
+    "read": true
+  },
+  {
+    "id": "ntf-volt-009",
+    "type": "system",
+    "title": "New feature",
+    "body": "Bulk product import is now available.",
+    "at": "2026-08-08T10:44:00.000Z",
+    "read": true
+  },
+  {
+    "id": "ntf-volt-010",
+    "type": "order",
+    "title": "Payment received",
+    "body": "Payment for order #2393 was confirmed.",
+    "at": "2026-08-08T09:57:00.000Z",
+    "read": true
+  },
+  {
+    "id": "ntf-volt-011",
+    "type": "stock",
+    "title": "Restock complete",
+    "body": "24 units of Steam Iron 2400W were added.",
+    "at": "2026-08-07T08:10:00.000Z",
+    "read": true
+  },
+  {
+    "id": "ntf-volt-012",
+    "type": "system",
+    "title": "Weekly report",
+    "body": "Your weekly sales report is ready.",
+    "at": "2026-08-07T07:23:00.000Z",
+    "read": true
+  }
+]

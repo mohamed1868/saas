@@ -1,0 +1,331 @@
+[
+  {
+    "id": "tkt-volt-001",
+    "number": "TCK-1200",
+    "subject": "Invoice PDF is not downloading",
+    "category": "technical",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2026-07-01T09:00:00.000Z",
+    "updatedAt": "2026-07-01T09:00:00.000Z",
+    "messages": [
+      {
+        "id": "msg-1-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "We tried from Chrome and Edge and the file never starts downloading. Any idea what to check?",
+        "at": "2026-07-01T09:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-002",
+    "number": "TCK-1201",
+    "subject": "Add a bulk import for products",
+    "category": "feature",
+    "priority": "medium",
+    "status": "pending",
+    "createdAt": "2026-07-02T10:07:00.000Z",
+    "updatedAt": "2026-07-02T13:11:00.000Z",
+    "messages": [
+      {
+        "id": "msg-2-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "We receive our supplier list as a spreadsheet, uploading them one by one takes hours.",
+        "at": "2026-07-02T10:07:00.000Z"
+      },
+      {
+        "id": "msg-2-2",
+        "from": "support",
+        "author": "FluxSync Support",
+        "body": "Good suggestion. It is on our roadmap, we will keep you posted.",
+        "at": "2026-07-02T13:11:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-003",
+    "number": "TCK-1202",
+    "subject": "Two users cannot sign in",
+    "category": "account",
+    "priority": "low",
+    "status": "resolved",
+    "createdAt": "2026-07-03T11:14:00.000Z",
+    "updatedAt": "2026-07-03T14:22:00.000Z",
+    "messages": [
+      {
+        "id": "msg-3-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "Both accounts get the same error after entering the password.",
+        "at": "2026-07-03T11:14:00.000Z"
+      },
+      {
+        "id": "msg-3-2",
+        "from": "support",
+        "author": "FluxSync Support",
+        "body": "Could you send us a screenshot of the error so we can check the logs?",
+        "at": "2026-07-03T14:22:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-004",
+    "number": "TCK-1203",
+    "subject": "Wrong stock count after an order",
+    "category": "technical",
+    "priority": "urgent",
+    "status": "closed",
+    "createdAt": "2026-07-04T12:21:00.000Z",
+    "updatedAt": "2026-07-04T12:21:00.000Z",
+    "messages": [
+      {
+        "id": "msg-4-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "After the last order the stock dropped by more than the ordered quantity.",
+        "at": "2026-07-04T12:21:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-005",
+    "number": "TCK-1204",
+    "subject": "Request a second branch on our plan",
+    "category": "billing",
+    "priority": "medium",
+    "status": "open",
+    "createdAt": "2026-07-05T13:28:00.000Z",
+    "updatedAt": "2026-07-05T16:44:00.000Z",
+    "messages": [
+      {
+        "id": "msg-5-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "We are opening a new branch next month and need it on the same account.",
+        "at": "2026-07-05T13:28:00.000Z"
+      },
+      {
+        "id": "msg-5-2",
+        "from": "support",
+        "author": "FluxSync Support",
+        "body": "Thanks for reaching out — we reproduced it and a fix is going out this week.",
+        "at": "2026-07-05T16:44:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-006",
+    "number": "TCK-1205",
+    "subject": "Arabic invoice layout is misaligned",
+    "category": "technical",
+    "priority": "low",
+    "status": "resolved",
+    "createdAt": "2026-07-06T14:35:00.000Z",
+    "updatedAt": "2026-07-06T12:55:00.000Z",
+    "messages": [
+      {
+        "id": "msg-6-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "We tried from Chrome and Edge and the file never starts downloading. Any idea what to check?",
+        "at": "2026-07-06T14:35:00.000Z"
+      },
+      {
+        "id": "msg-6-2",
+        "from": "support",
+        "author": "FluxSync Support",
+        "body": "Good suggestion. It is on our roadmap, we will keep you posted.",
+        "at": "2026-07-06T12:55:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-007",
+    "number": "TCK-1206",
+    "subject": "Payment failed but the plan renewed",
+    "category": "technical",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2026-07-07T09:42:00.000Z",
+    "updatedAt": "2026-07-07T09:42:00.000Z",
+    "messages": [
+      {
+        "id": "msg-7-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "We receive our supplier list as a spreadsheet, uploading them one by one takes hours.",
+        "at": "2026-07-07T09:42:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-008",
+    "number": "TCK-1207",
+    "subject": "Export orders to Excel",
+    "category": "feature",
+    "priority": "medium",
+    "status": "pending",
+    "createdAt": "2026-07-08T10:49:00.000Z",
+    "updatedAt": "2026-07-08T14:17:00.000Z",
+    "messages": [
+      {
+        "id": "msg-8-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "Both accounts get the same error after entering the password.",
+        "at": "2026-07-08T10:49:00.000Z"
+      },
+      {
+        "id": "msg-8-2",
+        "from": "support",
+        "author": "FluxSync Support",
+        "body": "This is now fixed on your account, please refresh and try again.",
+        "at": "2026-07-08T14:17:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-009",
+    "number": "TCK-1208",
+    "subject": "Slow loading on the orders page",
+    "category": "account",
+    "priority": "low",
+    "status": "resolved",
+    "createdAt": "2026-07-09T11:56:00.000Z",
+    "updatedAt": "2026-07-09T15:28:00.000Z",
+    "messages": [
+      {
+        "id": "msg-9-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "After the last order the stock dropped by more than the ordered quantity.",
+        "at": "2026-07-09T11:56:00.000Z"
+      },
+      {
+        "id": "msg-9-2",
+        "from": "support",
+        "author": "FluxSync Support",
+        "body": "Thanks for reaching out — we reproduced it and a fix is going out this week.",
+        "at": "2026-07-09T15:28:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-010",
+    "number": "TCK-1209",
+    "subject": "Change the account owner email",
+    "category": "technical",
+    "priority": "urgent",
+    "status": "closed",
+    "createdAt": "2026-07-10T12:03:00.000Z",
+    "updatedAt": "2026-07-10T12:03:00.000Z",
+    "messages": [
+      {
+        "id": "msg-10-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "We are opening a new branch next month and need it on the same account.",
+        "at": "2026-07-10T12:03:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-011",
+    "number": "TCK-1210",
+    "subject": "Invoice PDF is not downloading",
+    "category": "billing",
+    "priority": "medium",
+    "status": "open",
+    "createdAt": "2026-07-11T13:10:00.000Z",
+    "updatedAt": "2026-07-11T12:50:00.000Z",
+    "messages": [
+      {
+        "id": "msg-11-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "We tried from Chrome and Edge and the file never starts downloading. Any idea what to check?",
+        "at": "2026-07-11T13:10:00.000Z"
+      },
+      {
+        "id": "msg-11-2",
+        "from": "support",
+        "author": "FluxSync Support",
+        "body": "Could you send us a screenshot of the error so we can check the logs?",
+        "at": "2026-07-11T12:50:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-012",
+    "number": "TCK-1211",
+    "subject": "Add a bulk import for products",
+    "category": "technical",
+    "priority": "low",
+    "status": "resolved",
+    "createdAt": "2026-07-12T14:17:00.000Z",
+    "updatedAt": "2026-07-12T13:01:00.000Z",
+    "messages": [
+      {
+        "id": "msg-12-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "We receive our supplier list as a spreadsheet, uploading them one by one takes hours.",
+        "at": "2026-07-12T14:17:00.000Z"
+      },
+      {
+        "id": "msg-12-2",
+        "from": "support",
+        "author": "FluxSync Support",
+        "body": "This is now fixed on your account, please refresh and try again.",
+        "at": "2026-07-12T13:01:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-013",
+    "number": "TCK-1212",
+    "subject": "Two users cannot sign in",
+    "category": "technical",
+    "priority": "high",
+    "status": "open",
+    "createdAt": "2026-07-13T09:24:00.000Z",
+    "updatedAt": "2026-07-13T09:24:00.000Z",
+    "messages": [
+      {
+        "id": "msg-13-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "Both accounts get the same error after entering the password.",
+        "at": "2026-07-13T09:24:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "tkt-volt-014",
+    "number": "TCK-1213",
+    "subject": "Wrong stock count after an order",
+    "category": "feature",
+    "priority": "medium",
+    "status": "pending",
+    "createdAt": "2026-07-14T10:31:00.000Z",
+    "updatedAt": "2026-07-14T15:23:00.000Z",
+    "messages": [
+      {
+        "id": "msg-14-1",
+        "from": "company",
+        "author": "Mohamed Sayed",
+        "body": "After the last order the stock dropped by more than the ordered quantity.",
+        "at": "2026-07-14T10:31:00.000Z"
+      },
+      {
+        "id": "msg-14-2",
+        "from": "support",
+        "author": "FluxSync Support",
+        "body": "Good suggestion. It is on our roadmap, we will keep you posted.",
+        "at": "2026-07-14T15:23:00.000Z"
+      }
+    ]
+  }
+]
