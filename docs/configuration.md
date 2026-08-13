@@ -35,11 +35,18 @@ Flat config: JS recommended, TypeScript recommended, React Hooks recommended, Re
 
 | Variable | Effect |
 | --- | --- |
-| `VITE_USE_MOCKS` | `true` reads from `public/mock`; `false` sends real requests to `VITE_API_URL`. |
-| `VITE_API_URL` | Base URL when mocks are off. |
-| `VITE_WEB3FORMS_KEY` | Access key for the plan request form. Missing it makes the dialog show `missingFormKey`. |
+| `VITE_USE_MOCKS` | `true` reads from `public/mock`. |
+| `VITE_API_URL` | Base URL for a real backend. Leaving it unset also turns mocks on. |
 
-`.env` is git-ignored; `.env.example` documents the shape. Only variables prefixed with `VITE_` reach the browser bundle — and everything in that bundle is public, so never put a secret there.
+These two are the only environment variables. The Web3Forms access key used by the plan request form is hard-coded in `features/public/api/planRequest.ts` — see [pages/plans.md](pages/plans.md) for why.
+
+```ts
+const USE_MOCKS = import.meta.env.VITE_USE_MOCKS === "true" || !API_URL
+```
+
+Mocks are the fallback on purpose. `.env` is git-ignored, so a host like Vercel builds without it; without the fallback the app would send requests to bare paths such as `/products/categories/volt`, the SPA rewrite would answer with `index.html`, and every page would sit empty. Set `VITE_API_URL` in the host's environment settings when a real backend exists.
+
+Vite inlines these values at **build** time, so changing an environment variable on the host requires a redeploy, not just a restart. Only variables prefixed with `VITE_` reach the browser bundle — and everything in that bundle is public, so never put a secret there.
 
 ## shadcn/ui — `components.json`
 

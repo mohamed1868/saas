@@ -52,8 +52,11 @@ npm run dev
 ```ini
 VITE_USE_MOCKS=true                 # read data from /public/mock instead of a real API
 VITE_API_URL=http://localhost:8000/api   # used when VITE_USE_MOCKS is false
-VITE_WEB3FORMS_KEY=your-key         # plan request form (Web3Forms)
 ```
+
+`.env` is git-ignored, so a deployment never sees it. To keep the demo working anywhere, the app falls back to mock mode whenever `VITE_API_URL` is missing — point it at a real API (in the host's environment settings) to switch off the mocks.
+
+The plan request form posts to Web3Forms with an access key hard-coded in `features/public/api/planRequest.ts`. Web3Forms access keys are public by design — they ship in the client bundle either way — so the form works on any deployment with no configuration. Rotate the key in the Web3Forms dashboard if the form starts collecting spam.
 
 ### Demo accounts
 
