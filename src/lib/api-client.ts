@@ -3,10 +3,12 @@ import axios from "axios"
 import { clearSession, getSession } from "@/features/public/lib/session"
 import { PATHS } from "@/app/router/paths"
 
-const USE_MOCKS = import.meta.env.VITE_USE_MOCKS === "true"
+const API_URL = import.meta.env.VITE_API_URL
+
+const USE_MOCKS = import.meta.env.VITE_USE_MOCKS === "true" || !API_URL
 
 export const api = axios.create({
-  baseURL: USE_MOCKS ? "/mock" : import.meta.env.VITE_API_URL,
+  baseURL: USE_MOCKS ? "/mock" : API_URL,
   timeout: 15000,
   headers: { "Content-Type": "application/json" },
 })

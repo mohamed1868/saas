@@ -2,11 +2,9 @@ import { siteConfig } from "@/config/site"
 import type { PlanRequest } from "@/features/public/types/plans"
 
 const ENDPOINT = "https://api.web3forms.com/submit"
-const ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_KEY as string | undefined
+const ACCESS_KEY = "db5be048-e801-4035-8785-c850679f60fb"
 
 export async function requestPlan(request: PlanRequest) {
-  if (!ACCESS_KEY) throw new Error("missingFormKey")
-
   const response = await fetch(ENDPOINT, {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },

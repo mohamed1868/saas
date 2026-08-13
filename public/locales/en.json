@@ -85,7 +85,6 @@
   "requestSent": "Request received",
   "requestSentBody": "Thanks! We will contact you shortly to activate your account.",
   "requestFailed": "Couldn't send the request. Try again.",
-  "missingFormKey": "The form key is missing. Add VITE_WEB3FORMS_KEY to your .env file.",
   "companyName": "Company name",
   "contactName": "Contact name",
   "email": "Email",

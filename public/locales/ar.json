@@ -85,7 +85,6 @@
   "requestSent": "وصلنا طلبك",
   "requestSentBody": "شكرًا! هنتواصل معاك قريبًا لتفعيل الحساب.",
   "requestFailed": "تعذّر إرسال الطلب. حاول مرة أخرى.",
-  "missingFormKey": "مفتاح الفورم ناقص. ضيف VITE_WEB3FORMS_KEY في ملف .env.",
   "companyName": "اسم الشركة",
   "contactName": "اسم المسؤول",
   "email": "البريد الإلكتروني",

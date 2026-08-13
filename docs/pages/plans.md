@@ -40,11 +40,12 @@ Plans are the only mock resource **not** scoped to a company — `getPlans()` re
 
 ## The request form
 
-`requestPlan()` posts to `https://api.web3forms.com/submit` with the access key from `VITE_WEB3FORMS_KEY`:
+`requestPlan()` posts to `https://api.web3forms.com/submit`:
 
-- Missing key → throws `missingFormKey`, and the dialog tells the user to add it to `.env`.
-- Non-OK response or `success: false` → throws `requestFailed`.
+- Non-OK response or `success: false` → throws `requestFailed`, shown as an inline alert.
 - Success → the dialog swaps to a confirmation state.
+
+The access key is a constant in `api/planRequest.ts`, not an environment variable. Web3Forms keys are meant to be embedded in client-side forms, so the key is readable in the deployed bundle either way; hard-coding it means the form works on any deployment with no dashboard configuration. The trade-off is that the key also lives in git history — if the form starts collecting spam, rotate it in the Web3Forms dashboard and update the constant.
 
 The subject and sender name are built from `siteConfig.name`, and an empty message is sent as `—` so the email always has a body.
 
@@ -52,7 +53,7 @@ Validated fields: company name, contact name, a valid email, a phone matching th
 
 ## Translations
 
-`plansTitle`, `plansSubtitle`, `plansFooterNote`, `plansLoadFailed`, `backToLogin`, `perMonth`, `choosePlan`, `mostPopular`, `requestPlanTitle`, `requestPlanSubtitle`, `requestSent`, `requestSentBody`, `requestFailed`, `missingFormKey`, `companyName`, `contactName`, `email`, `phone`, `message`, `sendRequest`, `sending`, `close`, plus `companyRequired`, `nameRequired`, `emailInvalid`, `phoneInvalid`.
+`plansTitle`, `plansSubtitle`, `plansFooterNote`, `plansLoadFailed`, `backToLogin`, `perMonth`, `choosePlan`, `mostPopular`, `requestPlanTitle`, `requestPlanSubtitle`, `requestSent`, `requestSentBody`, `requestFailed`, `companyName`, `contactName`, `email`, `phone`, `message`, `sendRequest`, `sending`, `close`, plus `companyRequired`, `nameRequired`, `emailInvalid`, `phoneInvalid`.
 
 ## Mock data
 

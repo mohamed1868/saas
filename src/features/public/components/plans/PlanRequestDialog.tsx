@@ -76,9 +76,8 @@ export function PlanRequestDialog({
     try {
       await requestPlan({ ...values, planId: plan.id })
       setSent(true)
-    } catch (cause) {
-      const key = cause instanceof Error ? cause.message : ""
-      setError(key === "missingFormKey" ? "missingFormKey" : "requestFailed")
+    } catch {
+      setError("requestFailed")
     }
   }
 
