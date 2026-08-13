@@ -1,6 +1,7 @@
 import { MessageSquare, Trash2 } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
+import { StatusBadge } from "@/components/shared/StatusBadge"
 import { Button } from "@/components/ui/button"
 import {
   Table,
@@ -15,7 +16,7 @@ import type {
   TicketPriority,
   TicketStatus,
 } from "@/features/private/types/support"
-import { cn, formatDateTime } from "@/lib/utils"
+import { formatDateTime } from "@/lib/utils"
 
 const STATUS_STYLES: Record<TicketStatus, string> = {
   open: "bg-chart-2/15 text-chart-2",
@@ -74,25 +75,15 @@ export function SupportTable({ tickets, onOpen, onDelete }: SupportTableProps) {
             </TableCell>
 
             <TableCell>
-              <span
-                className={cn(
-                  "inline-flex rounded-full px-2.5 py-1 text-xs font-medium",
-                  PRIORITY_STYLES[ticket.priority],
-                )}
-              >
+              <StatusBadge tone={PRIORITY_STYLES[ticket.priority]}>
                 {t(`ticketPriority_${ticket.priority}`)}
-              </span>
+              </StatusBadge>
             </TableCell>
 
             <TableCell>
-              <span
-                className={cn(
-                  "inline-flex rounded-full px-2.5 py-1 text-xs font-medium",
-                  STATUS_STYLES[ticket.status],
-                )}
-              >
+              <StatusBadge tone={STATUS_STYLES[ticket.status]}>
                 {t(`ticketStatus_${ticket.status}`)}
-              </span>
+              </StatusBadge>
             </TableCell>
 
             <TableCell className="text-sm whitespace-nowrap text-muted-foreground">

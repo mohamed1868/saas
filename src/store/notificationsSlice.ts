@@ -2,13 +2,9 @@ import { createAsyncThunk, createSlice, type PayloadAction } from "@reduxjs/tool
 
 import { getNotifications } from "@/features/private/api/notifications"
 import type { Notification } from "@/features/private/types/notifications"
+import type { ScopedState } from "@/store/createScopedSlice"
 
-type LoadStatus = "idle" | "loading" | "ready" | "failed"
-
-type NotificationsState = {
-  byScope: Record<string, Notification[]>
-  statusByScope: Record<string, LoadStatus>
-}
+type NotificationsState = ScopedState<Notification>
 
 const initialState: NotificationsState = {
   byScope: {},

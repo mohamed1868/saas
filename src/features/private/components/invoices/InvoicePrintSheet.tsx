@@ -70,14 +70,14 @@ export function InvoicePrintSheet({ invoice }: InvoicePrintSheetProps) {
             {invoice.items.map((item) => (
               <tr key={item.productId} className="border-b border-neutral-200">
                 <td className="py-2.5">{item.name}</td>
-                <td dir="ltr" className="py-2.5 text-end tabular-nums">
-                  {formatMoney(item.price)}
+                <td className="py-2.5 text-end tabular-nums">
+                  <span dir="ltr">{formatMoney(item.price)}</span>
                 </td>
-                <td dir="ltr" className="py-2.5 text-end tabular-nums">
-                  {item.quantity}
+                <td className="py-2.5 text-end tabular-nums">
+                  <span dir="ltr">{item.quantity}</span>
                 </td>
-                <td dir="ltr" className="py-2.5 text-end tabular-nums">
-                  {formatMoney(item.price * item.quantity)}
+                <td className="py-2.5 text-end tabular-nums">
+                  <span dir="ltr">{formatMoney(item.price * item.quantity)}</span>
                 </td>
               </tr>
             ))}

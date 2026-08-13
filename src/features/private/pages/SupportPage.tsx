@@ -3,10 +3,8 @@ import { useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog"
-import { TablePagination } from "@/components/shared/TablePagination"
+import { ListCard } from "@/components/shared/ListCard"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
 import { NewTicketDialog } from "@/features/private/components/support/NewTicketDialog"
 import { SupportChannels } from "@/features/private/components/support/SupportChannels"
 import { SupportTable } from "@/features/private/components/support/SupportTable"
@@ -14,8 +12,9 @@ import { SupportToolbar } from "@/features/private/components/support/SupportToo
 import { TicketThreadDialog } from "@/features/private/components/support/TicketThreadDialog"
 import type { Ticket, TicketStatus } from "@/features/private/types/support"
 import { getSession } from "@/features/public/lib/session"
+import { useDataScope } from "@/hooks/useDataScope"
 import { usePagedList } from "@/hooks/usePagedList"
-import { dataScope, timestamp } from "@/lib/utils"
+import { timestamp } from "@/lib/utils"
 import { useAppDispatch, useAppSelector } from "@/store/hooks"
 import {
   fetchTickets,
@@ -39,12 +38,11 @@ function nextNumber(tickets: Ticket[]) {
 }
 
 export default function SupportPage() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
   const session = getSession()
-  const companyId = session?.company.id ?? ""
-  const scope = companyId ? dataScope(companyId, i18n.language) : ""
+  const { scope } = useDataScope()
 
   const stored = useAppSelector((state) => state.support.byScope[scope])
   const status = useAppSelector((state) => state.support.statusByScope[scope] ?? "idle")
@@ -164,7 +162,7 @@ export default function SupportPage() {
 
         <Button
           onClick={() => setCreating(true)}
-          className="bg-linear-to-r from-primary to-chart-3 text-white hover:brightness-110"
+          variant="gradient"
         >
           <Plus className="size-4" />
           {t("newTicket")}
@@ -192,47 +190,18 @@ export default function SupportPage() {
         onClear={clearFilters}
       />
 
-      <Card className="overflow-hidden rounded-xl border-border/70">
-        {status === "loading" ? (
-          <div className="space-y-3 p-5">
-            {Array.from({ length: 6 }, (_, index) => (
-              <Skeleton key={index} className="h-12 w-full" />
-            ))}
-          </div>
-        ) : status === "failed" ? (
-          <div className="flex flex-col items-center gap-3 p-10">
-            <p className="text-sm text-destructive">{t("ticketsLoadFailed")}</p>
-            <Button variant="outline" size="sm" onClick={() => dispatch(fetchTickets(scope))}>
-              {t("retry")}
-            </Button>
-          </div>
-        ) : filtered.length === 0 ? (
-          <div className="flex flex-col items-center gap-3 p-12 text-center">
-            <span className="flex size-12 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
-              <LifeBuoy className="size-6" />
-            </span>
-            <p className="text-sm text-muted-foreground">{t("noTickets")}</p>
-            <Button variant="outline" size="sm" onClick={clearFilters}>
-              {t("clearFilters")}
-            </Button>
-          </div>
-        ) : (
-          <>
-            <div className="overflow-x-auto">
-              <SupportTable tickets={paged.visible} onOpen={setOpened} onDelete={setDeleting} />
-            </div>
-
-            <TablePagination
-              page={paged.page}
-              pageCount={paged.pageCount}
-              from={paged.from}
-              to={paged.to}
-              total={paged.total}
-              onPageChange={paged.setPage}
-            />
-          </>
-        )}
-      </Card>
+      <ListCard
+        status={status}
+        errorText={t("ticketsLoadFailed")}
+        emptyIcon={LifeBuoy}
+        emptyText={t("noTickets")}
+        isEmpty={filtered.length === 0}
+        paged={paged}
+        onRetry={() => dispatch(fetchTickets(scope))}
+        onClearFilters={clearFilters}
+      >
+        <SupportTable tickets={paged.visible} onOpen={setOpened} onDelete={setDeleting} />
+      </ListCard>
 
       {creating && (
         <NewTicketDialog onSubmit={createTicket} onClose={() => setCreating(false)} />

@@ -140,7 +140,7 @@ export function InvoiceDetailsDialog({
           </Button>
           <Button
             onClick={() => window.print()}
-            className="bg-linear-to-r from-primary to-chart-3 text-white hover:brightness-110"
+            variant="gradient"
           >
             <Printer className="size-4" />
             {t("printInvoice")}

@@ -1,6 +1,7 @@
 import { Eye, Pencil, Trash2 } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
+import { StatusBadge } from "@/components/shared/StatusBadge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
@@ -12,7 +13,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import type { Invoice, InvoiceStatus } from "@/features/private/types/invoices"
-import { cn, formatMoney, initialsOf } from "@/lib/utils"
+import { formatMoney, initialsOf } from "@/lib/utils"
 
 const STATUS_STYLES: Record<InvoiceStatus, string> = {
   draft: "bg-muted text-muted-foreground",
@@ -73,14 +74,9 @@ export function InvoicesTable({ invoices, onOpen, onEdit, onDelete }: InvoicesTa
             </TableCell>
 
             <TableCell>
-              <span
-                className={cn(
-                  "inline-flex rounded-full px-2.5 py-1 text-xs font-medium",
-                  STATUS_STYLES[invoice.status],
-                )}
-              >
+              <StatusBadge tone={STATUS_STYLES[invoice.status]}>
                 {t(`invoiceStatus_${invoice.status}`)}
-              </span>
+              </StatusBadge>
             </TableCell>
 
             <TableCell dir="ltr" className="text-start text-sm font-medium tabular-nums">

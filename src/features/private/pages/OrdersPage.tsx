@@ -3,19 +3,16 @@ import { useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog"
-import { TablePagination } from "@/components/shared/TablePagination"
+import { ListCard } from "@/components/shared/ListCard"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
 import { OrderFormDialog } from "@/features/private/components/orders/OrderFormDialog"
 import { OrdersTable } from "@/features/private/components/orders/OrdersTable"
 import { OrdersToolbar } from "@/features/private/components/orders/OrdersToolbar"
 import type { Customer } from "@/features/private/types/customers"
 import type { Order, OrderDraft } from "@/features/private/types/orders"
 import type { Product } from "@/features/private/types/products"
-import { getSession } from "@/features/public/lib/session"
+import { useDataScope } from "@/hooks/useDataScope"
 import { usePagedList } from "@/hooks/usePagedList"
-import { dataScope } from "@/lib/utils"
 import { fetchCustomers } from "@/store/customersSlice"
 import { useAppDispatch, useAppSelector } from "@/store/hooks"
 import {
@@ -42,11 +39,10 @@ function nextNumber(orders: Order[]) {
 }
 
 export default function OrdersPage() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
-  const companyId = getSession()?.company.id ?? ""
-  const scope = companyId ? dataScope(companyId, i18n.language) : ""
+  const { scope } = useDataScope()
 
   const storedOrders = useAppSelector((state) => state.orders.byScope[scope])
   const storedCustomers = useAppSelector((state) => state.customers.byScope[scope])
@@ -111,7 +107,7 @@ export default function OrdersPage() {
     dispatch(
       orderAdded({
         scope,
-        order: { ...draft, number: nextNumber(orders), id: crypto.randomUUID() },
+        item: { ...draft, number: nextNumber(orders), id: crypto.randomUUID() },
       }),
     )
     paged.resetPage()
@@ -129,7 +125,7 @@ export default function OrdersPage() {
 
         <Button
           onClick={() => setCreating(true)}
-          className="bg-linear-to-r from-primary to-chart-3 text-white hover:brightness-110"
+          variant="gradient"
         >
           <Plus className="size-4" />
           {t("addOrder")}
@@ -155,47 +151,18 @@ export default function OrdersPage() {
         onClear={clearFilters}
       />
 
-      <Card className="overflow-hidden rounded-xl border-border/70">
-        {status === "loading" ? (
-          <div className="space-y-3 p-5">
-            {Array.from({ length: 6 }, (_, index) => (
-              <Skeleton key={index} className="h-12 w-full" />
-            ))}
-          </div>
-        ) : status === "failed" ? (
-          <div className="flex flex-col items-center gap-3 p-10">
-            <p className="text-sm text-destructive">{t("ordersLoadFailed")}</p>
-            <Button variant="outline" size="sm" onClick={() => dispatch(fetchOrders(scope))}>
-              {t("retry")}
-            </Button>
-          </div>
-        ) : filtered.length === 0 ? (
-          <div className="flex flex-col items-center gap-3 p-12 text-center">
-            <span className="flex size-12 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
-              <ShoppingCart className="size-6" />
-            </span>
-            <p className="text-sm text-muted-foreground">{t("noOrders")}</p>
-            <Button variant="outline" size="sm" onClick={clearFilters}>
-              {t("clearFilters")}
-            </Button>
-          </div>
-        ) : (
-          <>
-            <div className="overflow-x-auto">
-              <OrdersTable orders={paged.visible} onEdit={setEditing} onDelete={setDeleting} />
-            </div>
-
-            <TablePagination
-              page={paged.page}
-              pageCount={paged.pageCount}
-              from={paged.from}
-              to={paged.to}
-              total={paged.total}
-              onPageChange={paged.setPage}
-            />
-          </>
-        )}
-      </Card>
+      <ListCard
+        status={status}
+        errorText={t("ordersLoadFailed")}
+        emptyIcon={ShoppingCart}
+        emptyText={t("noOrders")}
+        isEmpty={filtered.length === 0}
+        paged={paged}
+        onRetry={() => dispatch(fetchOrders(scope))}
+        onClearFilters={clearFilters}
+      >
+        <OrdersTable orders={paged.visible} onEdit={setEditing} onDelete={setDeleting} />
+      </ListCard>
 
       {(creating || editing) && (
         <OrderFormDialog

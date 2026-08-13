@@ -1,6 +1,7 @@
 import { Pencil, Trash2 } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
+import { StatusBadge } from "@/components/shared/StatusBadge"
 import { Button } from "@/components/ui/button"
 import {
   Table,
@@ -84,14 +85,9 @@ export function ProductsTable({ products, onEdit, onDelete }: ProductsTableProps
             </TableCell>
 
             <TableCell>
-              <span
-                className={cn(
-                  "inline-flex rounded-full px-2.5 py-1 text-xs font-medium",
-                  STATUS_STYLES[product.status],
-                )}
-              >
+              <StatusBadge tone={STATUS_STYLES[product.status]}>
                 {t(`status_${product.status}`)}
-              </span>
+              </StatusBadge>
             </TableCell>
 
             <TableCell>

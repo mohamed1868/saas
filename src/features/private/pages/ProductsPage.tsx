@@ -3,19 +3,17 @@ import { useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog"
-import { TablePagination } from "@/components/shared/TablePagination"
+import { ListCard } from "@/components/shared/ListCard"
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
 import { ProductFormDialog } from "@/features/private/components/products/ProductFormDialog"
 import { ProductsTable } from "@/features/private/components/products/ProductsTable"
 import { ProductsToolbar } from "@/features/private/components/products/ProductsToolbar"
 import { getCategories } from "@/features/private/api/products"
 import type { Product, ProductDraft } from "@/features/private/types/products"
-import { getSession } from "@/features/public/lib/session"
+import { useDataScope } from "@/hooks/useDataScope"
 import { useRemoteList } from "@/hooks/useRemoteList"
 import { usePagedList } from "@/hooks/usePagedList"
-import { dataScope, mergeOptions } from "@/lib/utils"
+import { mergeOptions } from "@/lib/utils"
 import { useAppDispatch, useAppSelector } from "@/store/hooks"
 import {
   fetchProducts,
@@ -29,11 +27,10 @@ const PAGE_SIZE = 8
 const NO_PRODUCTS: Product[] = []
 
 export default function ProductsPage() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
-  const companyId = getSession()?.company.id ?? ""
-  const scope = companyId ? dataScope(companyId, i18n.language) : ""
+  const { companyId, scope } = useDataScope()
   const stored = useAppSelector((state) => state.products.byScope[scope])
   const status = useAppSelector((state) => state.products.statusByScope[scope] ?? "idle")
   const products = stored ?? NO_PRODUCTS
@@ -86,7 +83,7 @@ export default function ProductsPage() {
       return
     }
 
-    dispatch(productAdded({ scope, product: { ...draft, id: crypto.randomUUID() } }))
+    dispatch(productAdded({ scope, item: { ...draft, id: crypto.randomUUID() } }))
     paged.resetPage()
   }
 
@@ -102,7 +99,7 @@ export default function ProductsPage() {
 
         <Button
           onClick={() => setCreating(true)}
-          className="bg-linear-to-r from-primary to-chart-3 text-white hover:brightness-110"
+          variant="gradient"
         >
           <Plus className="size-4" />
           {t("addProduct")}
@@ -129,47 +126,18 @@ export default function ProductsPage() {
         onClear={clearFilters}
       />
 
-      <Card className="overflow-hidden rounded-xl border-border/70">
-        {status === "loading" ? (
-          <div className="space-y-3 p-5">
-            {Array.from({ length: 6 }, (_, index) => (
-              <Skeleton key={index} className="h-12 w-full" />
-            ))}
-          </div>
-        ) : status === "failed" ? (
-          <div className="flex flex-col items-center gap-3 p-10">
-            <p className="text-sm text-destructive">{t("productsLoadFailed")}</p>
-            <Button variant="outline" size="sm" onClick={() => dispatch(fetchProducts(scope))}>
-              {t("retry")}
-            </Button>
-          </div>
-        ) : filtered.length === 0 ? (
-          <div className="flex flex-col items-center gap-3 p-12 text-center">
-            <span className="flex size-12 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
-              <PackageSearch className="size-6" />
-            </span>
-            <p className="text-sm text-muted-foreground">{t("noProducts")}</p>
-            <Button variant="outline" size="sm" onClick={clearFilters}>
-              {t("clearFilters")}
-            </Button>
-          </div>
-        ) : (
-          <>
-            <div className="overflow-x-auto">
-              <ProductsTable products={paged.visible} onEdit={setEditing} onDelete={setDeleting} />
-            </div>
-
-            <TablePagination
-              page={paged.page}
-              pageCount={paged.pageCount}
-              from={paged.from}
-              to={paged.to}
-              total={paged.total}
-              onPageChange={paged.setPage}
-            />
-          </>
-        )}
-      </Card>
+      <ListCard
+        status={status}
+        errorText={t("productsLoadFailed")}
+        emptyIcon={PackageSearch}
+        emptyText={t("noProducts")}
+        isEmpty={filtered.length === 0}
+        paged={paged}
+        onRetry={() => dispatch(fetchProducts(scope))}
+        onClearFilters={clearFilters}
+      >
+        <ProductsTable products={paged.visible} onEdit={setEditing} onDelete={setDeleting} />
+      </ListCard>
 
       {(creating || editing) && (
         <ProductFormDialog

@@ -196,7 +196,8 @@ export function PlanRequestDialog({
                 type="submit"
                 size="lg"
                 disabled={!form.formState.isValid || form.formState.isSubmitting}
-                className="w-full bg-linear-to-r from-primary to-chart-3 text-white hover:brightness-110"
+                variant="gradient"
+                className="w-full"
               >
                 {form.formState.isSubmitting ? (
                   <>

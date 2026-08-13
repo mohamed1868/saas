@@ -115,7 +115,7 @@ export function TicketThreadDialog({
             <Button
               disabled={reply.trim().length < 2}
               onClick={send}
-              className="bg-linear-to-r from-primary to-chart-3 text-white hover:brightness-110"
+              variant="gradient"
             >
               <Send className="size-4 rtl:-scale-x-100" />
               {t("sendReply")}

@@ -1,6 +1,7 @@
 import { Pencil, Trash2 } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
+import { StatusBadge } from "@/components/shared/StatusBadge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
@@ -16,7 +17,7 @@ import type {
   OrderStatus,
   PaymentStatus,
 } from "@/features/private/types/orders"
-import { cn, formatMoney, initialsOf } from "@/lib/utils"
+import { formatMoney, initialsOf } from "@/lib/utils"
 
 const STATUS_STYLES: Record<OrderStatus, string> = {
   pending: "bg-chart-5/15 text-chart-5",
@@ -84,25 +85,15 @@ export function OrdersTable({ orders, onEdit, onDelete }: OrdersTableProps) {
             </TableCell>
 
             <TableCell>
-              <span
-                className={cn(
-                  "inline-flex rounded-full px-2.5 py-1 text-xs font-medium",
-                  STATUS_STYLES[order.status],
-                )}
-              >
+              <StatusBadge tone={STATUS_STYLES[order.status]}>
                 {t(`orderStatus_${order.status}`)}
-              </span>
+              </StatusBadge>
             </TableCell>
 
             <TableCell>
-              <span
-                className={cn(
-                  "inline-flex rounded-full px-2.5 py-1 text-xs font-medium",
-                  PAYMENT_STYLES[order.payment],
-                )}
-              >
+              <StatusBadge tone={PAYMENT_STYLES[order.payment]}>
                 {t(`payment_${order.payment}`)}
-              </span>
+              </StatusBadge>
             </TableCell>
 
             <TableCell dir="ltr" className="text-start text-sm font-medium tabular-nums">

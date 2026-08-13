@@ -58,7 +58,7 @@ export function AppSidebar() {
         <img
           src={logoDark}
           alt="FluxSync"
-          className="hidden h-8 w-auto dark:block group-data-[collapsible=icon]:!hidden"
+          className="hidden h-8 w-auto dark:block group-data-[collapsible=icon]:hidden!"
         />
       </SidebarHeader>
 

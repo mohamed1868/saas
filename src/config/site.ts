@@ -6,4 +6,4 @@ export const siteConfig = {
     phone: "+20 114 569 4211",
     whatsapp: "201145694211",
   },
-};
+}

@@ -3,10 +3,9 @@ import { useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 
 import { ConfirmDialog } from "@/components/shared/ConfirmDialog"
-import { TablePagination } from "@/components/shared/TablePagination"
+import { ListCard } from "@/components/shared/ListCard"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
 import { InvoiceDetailsDialog } from "@/features/private/components/invoices/InvoiceDetailsDialog"
 import { InvoiceFormDialog } from "@/features/private/components/invoices/InvoiceFormDialog"
 import { InvoicesTable } from "@/features/private/components/invoices/InvoicesTable"
@@ -18,9 +17,9 @@ import type {
   InvoiceStatus,
 } from "@/features/private/types/invoices"
 import type { Product } from "@/features/private/types/products"
-import { getSession } from "@/features/public/lib/session"
+import { useDataScope } from "@/hooks/useDataScope"
 import { usePagedList } from "@/hooks/usePagedList"
-import { dataScope, formatMoney } from "@/lib/utils"
+import { formatMoney } from "@/lib/utils"
 import { fetchCustomers } from "@/store/customersSlice"
 import { useAppDispatch, useAppSelector } from "@/store/hooks"
 import {
@@ -47,11 +46,10 @@ function nextNumber(invoices: Invoice[]) {
 }
 
 export default function InvoicesPage() {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const dispatch = useAppDispatch()
 
-  const companyId = getSession()?.company.id ?? ""
-  const scope = companyId ? dataScope(companyId, i18n.language) : ""
+  const { scope } = useDataScope()
 
   const storedInvoices = useAppSelector((state) => state.invoices.byScope[scope])
   const storedCustomers = useAppSelector((state) => state.customers.byScope[scope])
@@ -132,7 +130,7 @@ export default function InvoicesPage() {
     dispatch(
       invoiceAdded({
         scope,
-        invoice: { ...draft, number: nextNumber(invoices), id: crypto.randomUUID() },
+        item: { ...draft, number: nextNumber(invoices), id: crypto.randomUUID() },
       }),
     )
     paged.resetPage()
@@ -156,7 +154,7 @@ export default function InvoicesPage() {
 
         <Button
           onClick={() => setCreating(true)}
-          className="bg-linear-to-r from-primary to-chart-3 text-white hover:brightness-110"
+          variant="gradient"
         >
           <Plus className="size-4" />
           {t("newInvoice")}
@@ -200,52 +198,23 @@ export default function InvoicesPage() {
         onClear={clearFilters}
       />
 
-      <Card className="overflow-hidden rounded-xl border-border/70">
-        {status === "loading" ? (
-          <div className="space-y-3 p-5">
-            {Array.from({ length: 6 }, (_, index) => (
-              <Skeleton key={index} className="h-12 w-full" />
-            ))}
-          </div>
-        ) : status === "failed" ? (
-          <div className="flex flex-col items-center gap-3 p-10">
-            <p className="text-sm text-destructive">{t("invoicesLoadFailed")}</p>
-            <Button variant="outline" size="sm" onClick={() => dispatch(fetchInvoices(scope))}>
-              {t("retry")}
-            </Button>
-          </div>
-        ) : filtered.length === 0 ? (
-          <div className="flex flex-col items-center gap-3 p-12 text-center">
-            <span className="flex size-12 items-center justify-center rounded-2xl bg-muted text-muted-foreground">
-              <ReceiptText className="size-6" />
-            </span>
-            <p className="text-sm text-muted-foreground">{t("noInvoices")}</p>
-            <Button variant="outline" size="sm" onClick={clearFilters}>
-              {t("clearFilters")}
-            </Button>
-          </div>
-        ) : (
-          <>
-            <div className="overflow-x-auto">
-              <InvoicesTable
-                invoices={paged.visible}
-                onOpen={setOpened}
-                onEdit={setEditing}
-                onDelete={setDeleting}
-              />
-            </div>
-
-            <TablePagination
-              page={paged.page}
-              pageCount={paged.pageCount}
-              from={paged.from}
-              to={paged.to}
-              total={paged.total}
-              onPageChange={paged.setPage}
-            />
-          </>
-        )}
-      </Card>
+      <ListCard
+        status={status}
+        errorText={t("invoicesLoadFailed")}
+        emptyIcon={ReceiptText}
+        emptyText={t("noInvoices")}
+        isEmpty={filtered.length === 0}
+        paged={paged}
+        onRetry={() => dispatch(fetchInvoices(scope))}
+        onClearFilters={clearFilters}
+      >
+        <InvoicesTable
+          invoices={paged.visible}
+          onOpen={setOpened}
+          onEdit={setEditing}
+          onDelete={setDeleting}
+        />
+      </ListCard>
 
       {(creating || editing) && (
         <InvoiceFormDialog

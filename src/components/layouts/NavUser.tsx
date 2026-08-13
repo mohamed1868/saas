@@ -14,9 +14,8 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { SidebarMenuButton, useSidebar } from "@/components/ui/sidebar"
 import { clearSession, getSession } from "@/features/public/lib/session"
-import { dataScope } from "@/lib/utils"
+import { dataScope, initialsOf } from "@/lib/utils"
 import { useAppSelector } from "@/store/hooks"
-import { initialsOf } from "@/lib/utils"
 import { PATHS } from "@/app/router/paths"
 
 const GUEST = { name: "—", email: "", avatar: undefined }

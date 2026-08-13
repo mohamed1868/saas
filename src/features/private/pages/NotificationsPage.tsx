@@ -11,8 +11,8 @@ import {
   type Notification,
   type NotificationType,
 } from "@/features/private/types/notifications"
-import { getSession } from "@/features/public/lib/session"
-import { cn, dataScope, formatDateTime } from "@/lib/utils"
+import { useDataScope } from "@/hooks/useDataScope"
+import { cn, formatDateTime } from "@/lib/utils"
 import { useAppDispatch, useAppSelector } from "@/store/hooks"
 import {
   allNotificationsRead,
@@ -41,8 +41,7 @@ export default function NotificationsPage() {
   const { t, i18n } = useTranslation()
   const dispatch = useAppDispatch()
 
-  const companyId = getSession()?.company.id ?? ""
-  const scope = companyId ? dataScope(companyId, i18n.language) : ""
+  const { scope } = useDataScope()
 
   const stored = useAppSelector((state) => state.notifications.byScope[scope])
   const status = useAppSelector((state) => state.notifications.statusByScope[scope] ?? "idle")

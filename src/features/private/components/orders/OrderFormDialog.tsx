@@ -326,7 +326,7 @@ export function OrderFormDialog({
               <Button
                 type="submit"
                 disabled={!form.formState.isValid}
-                className="bg-linear-to-r from-primary to-chart-3 text-white hover:brightness-110"
+                variant="gradient"
               >
                 {order ? t("saveChanges") : t("addOrder")}
               </Button>

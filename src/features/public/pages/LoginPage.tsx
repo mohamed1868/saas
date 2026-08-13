@@ -224,7 +224,8 @@ export default function LoginPage() {
                     type="submit"
                     size="lg"
                     disabled={!canSubmit}
-                    className="relative w-full overflow-hidden bg-linear-to-r from-primary to-chart-3 text-white shadow-lg shadow-primary/25 transition-all hover:brightness-110 active:scale-[0.99] disabled:shadow-none"
+                    variant="gradient"
+                    className="relative w-full overflow-hidden shadow-lg shadow-primary/25 transition-all active:scale-[0.99] disabled:shadow-none"
                   >
                     {canSubmit && (
                       <span className="pointer-events-none absolute inset-y-0 start-0 w-1/4 animate-shine bg-white/25 blur-md" />

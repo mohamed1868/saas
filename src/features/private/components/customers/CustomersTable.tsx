@@ -1,6 +1,7 @@
 import { Pencil, Trash2 } from "lucide-react"
 import { useTranslation } from "react-i18next"
 
+import { StatusBadge } from "@/components/shared/StatusBadge"
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import {
@@ -16,7 +17,7 @@ import type {
   CustomerStatus,
   CustomerType,
 } from "@/features/private/types/customers"
-import { cn, formatMoney, initialsOf } from "@/lib/utils"
+import { formatMoney, initialsOf } from "@/lib/utils"
 
 const STATUS_STYLES: Record<CustomerStatus, string> = {
   active: "bg-chart-4/15 text-chart-4",
@@ -80,14 +81,9 @@ export function CustomersTable({ customers, onEdit, onDelete }: CustomersTablePr
             </TableCell>
 
             <TableCell>
-              <span
-                className={cn(
-                  "inline-flex rounded-full px-2.5 py-1 text-xs font-medium",
-                  TYPE_STYLES[customer.type],
-                )}
-              >
+              <StatusBadge tone={TYPE_STYLES[customer.type]}>
                 {t(`customerType_${customer.type}`)}
-              </span>
+              </StatusBadge>
             </TableCell>
 
             <TableCell className="text-sm tabular-nums">{customer.orders}</TableCell>
@@ -97,14 +93,9 @@ export function CustomersTable({ customers, onEdit, onDelete }: CustomersTablePr
             </TableCell>
 
             <TableCell>
-              <span
-                className={cn(
-                  "inline-flex rounded-full px-2.5 py-1 text-xs font-medium",
-                  STATUS_STYLES[customer.status],
-                )}
-              >
+              <StatusBadge tone={STATUS_STYLES[customer.status]}>
                 {t(`customerStatus_${customer.status}`)}
-              </span>
+              </StatusBadge>
             </TableCell>
 
             <TableCell>
